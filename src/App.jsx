@@ -4,6 +4,7 @@ import history from './data/history.json'
 import fakehistory from './data/fakehistory.json'
 import { List } from './components/list';
 import { ArtistsCard } from './pages/home/artistsCard';
+import { TotalPlaysCard } from './pages/home/totalPlaysCard';
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
 
       <div className='h-dvh p-2 bg-purple-black'>
         <div className='flex flex-col gap-2'>
+          <TotalPlaysCard  playTime={calcularTotalPlays()}/>
           {fakehistory.map((ele, index) => (
             <ArtistsCard key={index}
               playTime={calcularTotalPlays()}
