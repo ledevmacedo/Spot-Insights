@@ -15,6 +15,7 @@ export default function App() {
 
   function quantidadePlays() {
     return fakehistory.length;
+    // blabla
   }
 
   return (
