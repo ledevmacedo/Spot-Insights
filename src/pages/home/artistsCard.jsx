@@ -1,6 +1,6 @@
 import { Clock } from "iconsax-react";
 
-export function ArtistsCard({ playTime, release, trackName, albumAuthor, albumName, episodeName, episodeShow, spotifyUrl, reasonStart, reasonEnd, shuffle, skipped }) {
+export function ArtistsCard({ playTime, albumAuthor, name, artist }) {
     return (
         <>
             <div className=" flex p-2 gap-4  content-center justify-between items-center rounded-lg bg-purple-dark-light">

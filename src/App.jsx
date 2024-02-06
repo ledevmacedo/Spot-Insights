@@ -32,7 +32,28 @@ export default function App() {
     const quantidadeMusicasDiferentes = musicasUnicas.size;
     return quantidadeMusicasDiferentes;
   }
+
+
+  const artistTotals = {};
+
+  // Calcular o total para cada artista
+  fakehistory.forEach(item => {
+    const artist = item.master_metadata_album_artist_name;
+    artistTotals[artist] = (artistTotals[artist] || 0) + item.ms_played;
+  });
+
+  const artistList = Object.keys(artistTotals).map(artist => ({
+    name: artist,
+    totalMsPlayed: artistTotals[artist],
+  }));
+
+  // Encontrar o artista com o tempo máximo
+  const maxArtist = Object.keys(artistTotals).reduce((a, b) => artistTotals[a] > artistTotals[b] ? a : b);
+
+
   return (
+
+
     <>
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
@@ -55,9 +76,18 @@ export default function App() {
             />
           </div>
 
-          <div className=" text-white-dark">aaaaaa</div>
+          <div className=" text-white-dark">
+            {maxArtist}
+          </div>
+          <div className=" text-white-dark">
+            {artistTotals[maxArtist]}
+          </div>
 
-          {fakehistory.map((ele, index) => (
+          {/* playTime={Math.round(ele.totalMsPlayed / 3600000)} */}
+          {artistList.map((ele, index) => (
+            <ArtistsCard key={index} albumAuthor={ele.name} playTime={ele.totalMsPlayed < 3600000 ? Math.round(ele.totalMsPlayed / 60000) + " Minutes" : Math.round(ele.totalMsPlayed / 3600000) + " Hours"} />
+          ))}
+          {/* {fakehistory.map((ele, index) => (
             <ArtistsCard
               key={index}
               playTime={ele.ms_played}
@@ -73,7 +103,7 @@ export default function App() {
               shuffle={ele.shuffle}
               skipped={ele.skipped}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </>
