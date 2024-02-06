@@ -4,8 +4,9 @@ import history from "./data/history.json";
 import fakehistory from "./data/fakehistory.json";
 import { List } from "./components/list";
 import { ArtistsCard } from "./pages/home/artistsCard";
-import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
-import { TotalHoursCard } from "./pages/home/totalHoursCard";
+import { UnicStatsCard } from "./pages/home/unicStatsCard";
+import { MusicFilter, MusicPlay } from "iconsax-react";
+
 import { Play } from "iconsax-react";
 export default function App() {
   function quantidadePlays() {
@@ -36,8 +37,20 @@ export default function App() {
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">
-            <TotalPlaysCard playTime={quantidadePlays()} />
-            <TotalHoursCard playTime={quantidadeHoras()} />
+            <div className="flex gap-2">
+              <UnicStatsCard
+                icon={<MusicFilter size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Music Listened"}
+                value={quantidadePlays()}
+              />
+              <UnicStatsCard
+                icon={<MusicPlay size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Hours Listened"}
+                value={quantidadeHoras()}
+              />
+              <UnicStatsCard
+                icon={<MusicPlay size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Unique Musics"}
+                value={musicasUnicas()}
+              />
+            </div>
           </div>
 
           <div className=" text-white-dark">aaaaaa</div>
