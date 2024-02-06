@@ -10,7 +10,7 @@ export default {
       'white-light': '#EBE7E1',
       'white-dark': '#F2EFEB',
 
-      'purple-main': '#36E31D1',
+      'purple-main': '#6E31D1',
       'purple-main-light': '#B282FF',
       'purple-main-dark': '#3C2169',
 
