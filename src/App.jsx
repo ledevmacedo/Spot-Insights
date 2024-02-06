@@ -7,16 +7,12 @@ import { ArtistsCard } from "./pages/home/artistsCard";
 import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
 import { TotalHoursCard } from "./pages/home/totalHoursCard";
 import { Play } from "iconsax-react";
-
+import TopArtists from './hooks/allArtists.js'
 export default function App() {
-  // function calcularTotalPlays() {
-  //   fakehistory.map(ms_played)
-  //   return total
-  // }
+
 
   function quantidadePlays() {
     return fakehistory.length;
-    // blabla
   }
   function quantidadeHoras() {
     const totalMilissegundos = fakehistory.reduce((acc, ele) => {
@@ -25,7 +21,7 @@ export default function App() {
 
     const totalHoras = totalMilissegundos / 3600000;
 
-    return totalHoras;
+    return Math.round(totalHoras);
   }
 
 
@@ -53,7 +49,7 @@ export default function App() {
               playTime={ele.ms_played}
               relese={ele.ts}
               trackName={ele.master_metadata_track_name}
-              albumAuthor={ele.master_metadata_album_artist_name}
+              albumAuthor={TopArtists()}
               albumName={ele.master_metadata_album_album_name}
               episodeName={ele.episoe_name}
               episodeShow={ele.episode_show_name}
