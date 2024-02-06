@@ -4,7 +4,7 @@ import { EmojiHappy } from 'iconsax-react';
 function App() {
   return (
     <>
-      <h1 className="bg-emerald-500"> OLA WORLD</h1>
+      <h1 className="bg-emerald-500 text-3xl font-geist"> OLA WORLD</h1>
     </>
   )
 }
