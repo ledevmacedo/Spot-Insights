@@ -1,6 +1,6 @@
 [
     {
-        "ms_played": 1000,
+        "ms_played": 3600000,
         "ts": "2017-09-14T18:00:11Z",
         "master_metadata_track_name": "Neighbor",
         "master_metadata_album_artist_name": "J. Cole",
@@ -14,7 +14,7 @@
         "skipped": null
     },
     {
-        "ms_played": 100,
+        "ms_played": 3600000,
         "ts": "2017-09-14T18:00:11Z",
         "master_metadata_track_name": "Neighbor",
         "master_metadata_album_artist_name": "Zé da Mata",
@@ -28,7 +28,7 @@
         "skipped": null
     },
     {
-        "ms_played": 100,
+        "ms_played": 3600000,
         "ts": "2017-09-14T18:00:11Z",
         "master_metadata_track_name": "Neighbor",
         "master_metadata_album_artist_name": "J. Cole",
@@ -42,7 +42,7 @@
         "skipped": null
     },
     {
-        "ms_played": 100,
+        "ms_played": 3600000,
         "ts": "2017-09-14T18:00:11Z",
         "master_metadata_track_name": "Neighbor",
         "master_metadata_album_artist_name": "J. Cole",

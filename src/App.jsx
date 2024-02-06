@@ -17,7 +17,7 @@ export default function App() {
     return fakehistory.length;
     // blabla
   }
-
+  
   return (
     <>
       <div className="h-dvh p-2 bg-purple-black">
