@@ -18,11 +18,19 @@ export default function App() {
     // blabla
   }
 
+  function musicasDiferentes() {
+    let musicasDiferentes = new Set(fakehistory.master_metadata_track_name)
+      .length;
+    return musicasDiferentes;
+  }
+
   return (
     <>
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
           <TotalPlaysCard playTime={quantidadePlays()} />
+
+          <div className=" text-white-dark">aaaaaa</div>
 
           {fakehistory.map((ele, index) => (
             <ArtistsCard

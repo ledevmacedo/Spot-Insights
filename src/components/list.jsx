@@ -1,13 +1,25 @@
-export function List({ playTime, release, trackName, albumAuthor, albumName, episodeName, episodeShow, spotifyUrl, reasonStart, reasonEnd, shuffle, skipped }) {
-
-
-
-    return (
-        <>  <div className="flex gap-2 flex-col">
-            <h1 className="text-white-main text-3xl font-geist">
-                playtime: {playTime}
-            </h1>
-            {/* <h1 className="text-white-main text-3xl font-geist">
+export function List({
+  playTime,
+  release,
+  trackName,
+  albumAuthor,
+  albumName,
+  episodeName,
+  episodeShow,
+  spotifyUrl,
+  reasonStart,
+  reasonEnd,
+  shuffle,
+  skipped,
+}) {
+  return (
+    <>
+      {" "}
+      <div className="flex gap-2 flex-col">
+        <h1 className="text-white-main text-3xl font-geist">
+          playtime: {playTime}
+        </h1>
+        {/* <h1 className="text-white-main text-3xl font-geist">
                 release: {release}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
@@ -40,9 +52,9 @@ export function List({ playTime, release, trackName, albumAuthor, albumName, epi
             <h1 className="text-white-main text-3xl font-geist">
                 skipped: {skipped}
             </h1> */}
-        </div>
-        </>
-    )
+      </div>
+    </>
+  );
 }
 
 // {"ms_played": 216520,
