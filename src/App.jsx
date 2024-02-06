@@ -1,38 +1,31 @@
-import React from 'react';
-import { EmojiHappy } from 'iconsax-react';
-import history from './data/history.json'
-import fakehistory from './data/fakehistory.json'
-import { List } from './components/list';
-import { ArtistsCard } from './pages/home/artistsCard';
-import { TotalPlaysCard } from './pages/home/totalPlaysCard';
-import { Play } from 'iconsax-react';
-
-
+import React from "react";
+import { EmojiHappy } from "iconsax-react";
+import history from "./data/history.json";
+import fakehistory from "./data/fakehistory.json";
+import { List } from "./components/list";
+import { ArtistsCard } from "./pages/home/artistsCard";
+import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
+import { Play } from "iconsax-react";
 
 export default function App() {
-
   // function calcularTotalPlays() {
   //   fakehistory.map(ms_played)
   //   return total
   // }
 
-  function calcularTotalPlays() {
-    return fakehistory.reduce((acc, ele) => {
-      let unidade = acc + ele.ms_played
-      return unidade //retorna o total em milisegundos
-    }, 0)
-
+  function quantidadePlays() {
+    return fakehistory.length;
   }
 
   return (
     <>
-
-      <div className='h-dvh p-2 bg-purple-black'>
-        <div className='flex flex-col gap-2'>
-          <TotalPlaysCard playTime={calcularTotalPlays()} />
+      <div className="h-dvh p-2 bg-purple-black">
+        <div className="flex flex-col gap-2">
+          <TotalPlaysCard playTime={quantidadePlays()} />
 
           {fakehistory.map((ele, index) => (
-            <ArtistsCard key={index}
+            <ArtistsCard
+              key={index}
               playTime={ele.ms_played}
               relese={ele.ts}
               trackName={ele.master_metadata_track_name}
@@ -50,5 +43,5 @@ export default function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
