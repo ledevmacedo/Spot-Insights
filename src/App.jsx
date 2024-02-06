@@ -8,8 +8,6 @@ import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
 import { TotalHoursCard } from "./pages/home/totalHoursCard";
 import { Play } from "iconsax-react";
 export default function App() {
-
-
   function quantidadePlays() {
     return fakehistory.length;
   }
@@ -23,11 +21,14 @@ export default function App() {
     return Math.round(totalHoras);
   }
 
+  function musicasUnicas() {
+    const musicasUnicas = new Set();
+    fakehistory.forEach((musica) => {
+      musicasUnicas.add(musica.master_metadata_track_name);
+    });
 
-  function musicasDiferentes() {
-    let musicasDiferentes = new Set(fakehistory.master_metadata_track_name)
-      .length;
-    return musicasDiferentes;
+    const quantidadeMusicasDiferentes = musicasUnicas.size;
+    return quantidadeMusicasDiferentes;
   }
 
   return (
@@ -38,7 +39,6 @@ export default function App() {
             <TotalPlaysCard playTime={quantidadePlays()} />
             <TotalHoursCard playTime={quantidadeHoras()} />
           </div>
-
 
           <div className=" text-white-dark">aaaaaa</div>
 
