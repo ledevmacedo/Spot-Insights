@@ -1,3 +1,43 @@
-@tailwind base; 
-@tailwind components; 
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
+
+/* Geist Regular */
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/Geist-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Geist Black */
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/Geist-Black.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900; /* Usando 900 para fonte Black */
+}
+
+/* Geist Bold */
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/Geist-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Geist Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/Geist-Italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Geist Bold Italic */
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/Geist-BoldItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: bold;
+}
