@@ -7,7 +7,6 @@ import { ArtistsCard } from "./pages/home/artistsCard";
 import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
 import { TotalHoursCard } from "./pages/home/totalHoursCard";
 import { Play } from "iconsax-react";
-import TopArtists from './hooks/allArtists.js'
 export default function App() {
 
 
@@ -49,7 +48,7 @@ export default function App() {
               playTime={ele.ms_played}
               relese={ele.ts}
               trackName={ele.master_metadata_track_name}
-              albumAuthor={TopArtists()}
+              albumAuthor={ele.master_metadata_album_artist_name}
               albumName={ele.master_metadata_album_album_name}
               episodeName={ele.episoe_name}
               episodeShow={ele.episode_show_name}

@@ -1,5 +1,5 @@
 import { Clock } from "iconsax-react";
-import TopArtists from '../../hooks/allArtists.js'
+
 export function ArtistsCard({ playTime, release, trackName, albumAuthor, albumName, episodeName, episodeShow, spotifyUrl, reasonStart, reasonEnd, shuffle, skipped }) {
     return (
         <>
