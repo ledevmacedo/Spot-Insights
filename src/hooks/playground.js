@@ -108,29 +108,29 @@ function calcularTempoTotal(listaDeMusicas) {
 /// artista mais ouvido ///
 
 function encontrarArtistaMaisOuvido(listaDeMusicas) {
-  
+
     const contagemDePlaysPorArtista = {};
-  
+
     listaDeMusicas.forEach((musica) => {
-      const { cantor, plays } = musica;
-  
-      if (contagemDePlaysPorArtista[cantor]) {
-        contagemDePlaysPorArtista[cantor] += plays || 0;
-      } else {
-        contagemDePlaysPorArtista[cantor] = plays || 0;
-      }
+        const { cantor, plays } = musica;
+
+        if (contagemDePlaysPorArtista[cantor]) {
+            contagemDePlaysPorArtista[cantor] += plays || 0;
+        } else {
+            contagemDePlaysPorArtista[cantor] = plays || 0;
+        }
     });
-  
+
     let artistaMaisOuvido = null;
     let maxPlays = 0;
-  
+
     for (const cantor in contagemDePlaysPorArtista) {
-      if (contagemDePlaysPorArtista[cantor] > maxPlays) {
-        artistaMaisOuvido = cantor;
-        maxPlays = contagemDePlaysPorArtista[cantor];
-      }
+        if (contagemDePlaysPorArtista[cantor] > maxPlays) {
+            artistaMaisOuvido = cantor;
+            maxPlays = contagemDePlaysPorArtista[cantor];
+        }
     }
-  
+
     return artistaMaisOuvido;
-  }
+}
 export { nome, idade, calcularTotalPlays, calcularTempoTotal, contarMusicasDiferentes, calcularMediaTempoDiario, encontrarArtistaMaisOuvido }

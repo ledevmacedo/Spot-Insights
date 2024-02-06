@@ -5,17 +5,23 @@ import fakehistory from './data/fakehistory.json'
 import { List } from './components/list';
 import { ArtistsCard } from './pages/home/artistsCard';
 import { TotalPlaysCard } from './pages/home/totalPlaysCard';
+import { Play } from 'iconsax-react';
 
 
 
 export default function App() {
 
+  // function calcularTotalPlays() {
+  //   fakehistory.map(ms_played)
+  //   return total
+  // }
+
   function calcularTotalPlays() {
-    let playTime = 0;
-    fakehistory.forEach((ms_played) => {
-      playTime += ms_played.plays || 0;
-    });
-    return fakehistory.length;
+    return fakehistory.reduce((acc, ele) => {
+      let unidade = acc + ele.ms_played
+      return unidade //retorna o total em milisegundos
+    }, 0)
+
   }
 
   return (
@@ -23,10 +29,11 @@ export default function App() {
 
       <div className='h-dvh p-2 bg-purple-black'>
         <div className='flex flex-col gap-2'>
-          <TotalPlaysCard  playTime={calcularTotalPlays()}/>
+          <TotalPlaysCard playTime={calcularTotalPlays()} />
+
           {fakehistory.map((ele, index) => (
             <ArtistsCard key={index}
-              playTime={calcularTotalPlays()}
+              playTime={ele.ms_played}
               relese={ele.ts}
               trackName={ele.master_metadata_track_name}
               albumAuthor={ele.master_metadata_album_artist_name}
@@ -45,6 +52,3 @@ export default function App() {
     </>
   )
 }
-
-
-
