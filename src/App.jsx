@@ -1,12 +1,21 @@
 import React from 'react';
 import { EmojiHappy } from 'iconsax-react';
+import history from './data/history.json'
+import fakehistory from './data/fakehistory.json'
+import { List } from './components/list';
 
-function App() {
+export default function App() {
   return (
     <>
-      <h1 className="bg-emerald-500 text-3xl font-geist"> OLA WORLD</h1>
+
+      <div className='h-dvh w-full bg-purple-dark'>
+        {fakehistory.map((props, index) => (
+          <List key={index} {...props} />
+        ))}
+      </div>
     </>
   )
 }
 
-export default App
+
+
