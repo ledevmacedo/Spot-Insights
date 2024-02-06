@@ -82,4 +82,26 @@ function calcularTempoTotal(listaDeMusicas) {
     return tempoTotalMinutos;
 }
 
-export { nome, idade, }
+/// tempo diario a ouvir musica /// 
+
+function calcularMediaTempoDiario(listaDeMusicas, minutosPorDia) {
+
+    const tempoTotal = calcularTempoTotal(listaDeMusicas);
+    const mediaTempoDiario = tempoTotal / minutosPorDia;
+
+    return mediaTempoDiario;
+}
+
+
+function calcularTempoTotal(listaDeMusicas) {
+    let tempoTotalMinutos = 0;
+
+    listaDeMusicas.forEach((musica) => {
+        tempoTotalMinutos += (musica.duracao || 0) * (musica.plays || 1);
+    });
+
+    return tempoTotalMinutos;
+}
+
+
+export { nome, idade, calcularTotalPlays, calcularTempoTotal, contarMusicasDiferentes, calcularMediaTempoDiario, }
