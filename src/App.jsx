@@ -5,6 +5,7 @@ import fakehistory from "./data/fakehistory.json";
 import { List } from "./components/list";
 import { ArtistsCard } from "./pages/home/artistsCard";
 import { TotalPlaysCard } from "./pages/home/totalPlaysCard";
+import { TotalHoursCard } from "./pages/home/totalHoursCard";
 import { Play } from "iconsax-react";
 
 export default function App() {
@@ -17,6 +18,16 @@ export default function App() {
     return fakehistory.length;
     // blabla
   }
+  function quantidadeHoras() {
+    const totalMilissegundos = fakehistory.reduce((acc, ele) => {
+      return acc + ele.ms_played;
+    }, 0);
+
+    const totalHoras = totalMilissegundos / 3600000;
+
+    return totalHoras;
+  }
+
 
   function musicasDiferentes() {
     let musicasDiferentes = new Set(fakehistory.master_metadata_track_name)
@@ -28,7 +39,11 @@ export default function App() {
     <>
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
-          <TotalPlaysCard playTime={quantidadePlays()} />
+          <div className="flex gap-2">
+            <TotalPlaysCard playTime={quantidadePlays()} />
+            <TotalHoursCard playTime={quantidadeHoras()} />
+          </div>
+
 
           <div className=" text-white-dark">aaaaaa</div>
 
