@@ -25,9 +25,7 @@ const pessoa = [
 
 function nome() {
     return (
-
         names.filter(name => name.includes('fulano')).length
-
     )
 }
 
@@ -107,11 +105,12 @@ function calcularTempoTotal(listaDeMusicas) {
 
 /// artista mais ouvido ///
 
-function encontrarArtistaMaisOuvido(listaDeMusicas) {
+function encontrarArtistaMaisOuvido() {
 
     const contagemDePlaysPorArtista = {};
-
-    listaDeMusicas.forEach((musica) => {
+    const cantor = master_metadata_album_artist_name
+    const plays = ms_played
+    fake.forEach((musica) => {
         const { cantor, plays } = musica;
 
         if (contagemDePlaysPorArtista[cantor]) {

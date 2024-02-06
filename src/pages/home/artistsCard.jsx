@@ -1,11 +1,11 @@
 import { Clock } from "iconsax-react";
 
-export function ArtistsCard({ playTime, albumAuthor, name, artist }) {
+export function ArtistsCard({ playTime, albumAuthor, index, artist }) {
     return (
         <>
             <div className=" flex p-2 gap-4  content-center justify-between items-center rounded-lg bg-purple-dark-light">
                 <div className="flex gap-4 items-center">
-                    <p className="font-geist font-light text-white-dark text-md">1</p>
+                    <p className="font-geist font-light text-white-dark text-md"> {index} </p>
                     <div className="rounded-full h-8 w-8 bg-purple-main" />
                     <p className="font-geist font-normal text-white-dark text-md"> {albumAuthor} </p>
                 </div>

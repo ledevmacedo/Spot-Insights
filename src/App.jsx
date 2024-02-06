@@ -33,27 +33,37 @@ export default function App() {
     return quantidadeMusicasDiferentes;
   }
 
+  function encontrarArtistaMaisOuvido() {
+    const contagemDePlaysPorArtista = {};
+    fakehistory.forEach((musica) => {
+      const cantor = musica.master_metadata_album_artist_name;
+      const plays = musica.ms_played || 0;
 
-  const artistTotals = {};
+      if (contagemDePlaysPorArtista[cantor]) {
+        contagemDePlaysPorArtista[cantor] += plays;
+      } else {
+        contagemDePlaysPorArtista[cantor] = plays;
+      }
+    });
 
-  // Calcular o total para cada artista
-  fakehistory.forEach(item => {
-    const artist = item.master_metadata_album_artist_name;
-    artistTotals[artist] = (artistTotals[artist] || 0) + item.ms_played;
-  });
+    const cantor = musica.master_metadata_album_artist_name;
+    const plays = musica.ms_played || 0;
 
-  const artistList = Object.keys(artistTotals).map(artist => ({
-    name: artist,
-    totalMsPlayed: artistTotals[artist],
-  }));
+    let sortable = []
+    for (let cantor in plays) {
+      sortable.push([cantor, plays[cantor]]);
+    }
 
-  // Encontrar o artista com o tempo máximo
-  const maxArtist = Object.keys(artistTotals).reduce((a, b) => artistTotals[a] > artistTotals[b] ? a : b);
+    sortable.sort(function (a, b) {
+      return a[1] - b[1];
+    });
+    return sortable
+  }
 
+
+  
 
   return (
-
-
     <>
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
@@ -67,7 +77,6 @@ export default function App() {
               icon={<MusicPlay size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Hours Listened"}
               value={quantidadeHoras()}
             />
-
           </div>
           <div className="flex gap-2">
             <UnicStatsCard
@@ -76,17 +85,14 @@ export default function App() {
             />
           </div>
 
-          <div className=" text-white-dark">
-            {maxArtist}
-          </div>
-          <div className=" text-white-dark">
-            {artistTotals[maxArtist]}
-          </div>
-
           {/* playTime={Math.round(ele.totalMsPlayed / 3600000)} */}
-          {artistList.map((ele, index) => (
-            <ArtistsCard key={index} albumAuthor={ele.name} playTime={ele.totalMsPlayed < 3600000 ? Math.round(ele.totalMsPlayed / 60000) + " Minutes" : Math.round(ele.totalMsPlayed / 3600000) + " Hours"} />
-          ))}
+          <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">Top Artists</h1>
+          <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">
+            {/* {encontrarArtistaMaisOuvido()} */}
+          </h1>
+          {/* {encontrarArtistaMaisOuvido.map((ele, index) => (
+            <ArtistsCard key={index} albumAuthor={ele.name} index={index + 1} playTime={ele.totalMsPlayed < 3600000 ? Math.round(ele.totalMsPlayed / 60000) + " Minutes" : Math.round(ele.totalMsPlayed / 3600000) + " Hours"} />
+          ))} */}
           {/* {fakehistory.map((ele, index) => (
             <ArtistsCard
               key={index}
