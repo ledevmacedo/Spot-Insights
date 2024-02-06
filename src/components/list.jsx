@@ -7,7 +7,7 @@ export function List({ playTime, release, trackName, albumAuthor, albumName, epi
             <h1 className="text-white-main text-3xl font-geist">
                 playtime: {playTime}
             </h1>
-            <h1 className="text-white-main text-3xl font-geist">
+            {/* <h1 className="text-white-main text-3xl font-geist">
                 release: {release}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
@@ -20,16 +20,16 @@ export function List({ playTime, release, trackName, albumAuthor, albumName, epi
                 album: {albumName}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
-               ep: {episodeName}
+                ep: {episodeName}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
                 ep show: {episodeShow}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
-              url: {spotifyUrl}
+                url: {spotifyUrl}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
-              reason start:  {reasonStart}
+                reason start:  {reasonStart}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
                 {reasonEnd}
@@ -38,8 +38,8 @@ export function List({ playTime, release, trackName, albumAuthor, albumName, epi
                 shuffle: {shuffle}
             </h1>
             <h1 className="text-white-main text-3xl font-geist">
-               skipped: {skipped}
-            </h1>
+                skipped: {skipped}
+            </h1> */}
         </div>
         </>
     )
