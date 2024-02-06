@@ -54,7 +54,9 @@ function calcularTotalPlays() {
         totalPlays += musica.plays || 0;
     });
     return history.length;
+
 }
+console.log(cal)
 
 /// TOTAL MUSICAS DIFERENTES ///
 
@@ -103,5 +105,32 @@ function calcularTempoTotal(listaDeMusicas) {
     return tempoTotalMinutos;
 }
 
+/// artista mais ouvido ///
 
-export { nome, idade, calcularTotalPlays, calcularTempoTotal, contarMusicasDiferentes, calcularMediaTempoDiario, }
+function encontrarArtistaMaisOuvido(listaDeMusicas) {
+  
+    const contagemDePlaysPorArtista = {};
+  
+    listaDeMusicas.forEach((musica) => {
+      const { cantor, plays } = musica;
+  
+      if (contagemDePlaysPorArtista[cantor]) {
+        contagemDePlaysPorArtista[cantor] += plays || 0;
+      } else {
+        contagemDePlaysPorArtista[cantor] = plays || 0;
+      }
+    });
+  
+    let artistaMaisOuvido = null;
+    let maxPlays = 0;
+  
+    for (const cantor in contagemDePlaysPorArtista) {
+      if (contagemDePlaysPorArtista[cantor] > maxPlays) {
+        artistaMaisOuvido = cantor;
+        maxPlays = contagemDePlaysPorArtista[cantor];
+      }
+    }
+  
+    return artistaMaisOuvido;
+  }
+export { nome, idade, calcularTotalPlays, calcularTempoTotal, contarMusicasDiferentes, calcularMediaTempoDiario, encontrarArtistaMaisOuvido }
