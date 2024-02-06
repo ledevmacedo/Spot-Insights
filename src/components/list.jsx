@@ -1,9 +1,46 @@
-export function List({ ms_played, master_metadata_track_name }) {
+export function List({ playTime, release, trackName, albumAuthor, albumName, episodeName, episodeShow, spotifyUrl, reasonStart, reasonEnd, shuffle, skipped }) {
+
+
+
     return (
-        <>
+        <>  <div className="flex gap-2 flex-col">
             <h1 className="text-white-main text-3xl font-geist">
-                {master_metadata_track_name}
+                playtime: {playTime}
             </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                release: {release}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                trackname:  {trackName}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                Author: {albumAuthor}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                album: {albumName}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+               ep: {episodeName}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                ep show: {episodeShow}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+              url: {spotifyUrl}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+              reason start:  {reasonStart}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                {reasonEnd}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+                shuffle: {shuffle}
+            </h1>
+            <h1 className="text-white-main text-3xl font-geist">
+               skipped: {skipped}
+            </h1>
+        </div>
         </>
     )
 }
