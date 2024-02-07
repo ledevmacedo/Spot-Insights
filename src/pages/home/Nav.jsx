@@ -1,11 +1,12 @@
 import { Setting2 } from "iconsax-react";
 import { UserImage } from "../../components/UserImage";
 
-export function UserInfo({ userID, userName,picture }) {
+
+export function Nav({ userID, userName, picture }) {
     return (
         <>
             <div className="flex flex-row gap-2 items-center justify-between mb-4">
-                <div className="flex flwx-row gap-2 items-center">
+                <div className="flex flex-row gap-2 items-center w-4/12">
                     <UserImage imageUrl={picture} />
                     <div className="flex flex-col">
                         <h1 className="text-white-dark text-xs">
@@ -15,6 +16,9 @@ export function UserInfo({ userID, userName,picture }) {
                             {userName}
                         </h1>
                     </div>
+                </div>
+                <div className="flex flex-row items-center w-4/12">
+                    <img src="../../assets/images/logo.svg" className="h-8 w-8" alt="" />
                 </div>
                 <div>
                     <Setting2 className="cursor-pointer" size="24" color="#fff" variant="Bulk" />
