@@ -7,7 +7,6 @@ import { ArtistsCard } from "./pages/home/artistsCard";
 import { UnicStatsCard } from "./pages/home/unicStatsCard";
 import { MusicFilter, MusicPlay } from "iconsax-react";
 
-
 import { Play } from "iconsax-react";
 export default function App() {
   function quantidadePlays() {
@@ -49,7 +48,7 @@ export default function App() {
     const cantor = musica.master_metadata_album_artist_name;
     const plays = musica.ms_played || 0;
 
-    let sortable = []
+    let sortable = [];
     for (let cantor in plays) {
       sortable.push([cantor, plays[cantor]]);
     }
@@ -57,36 +56,58 @@ export default function App() {
     sortable.sort(function (a, b) {
       return a[1] - b[1];
     });
-    return sortable
+    return sortable;
   }
-
-
-  
 
   return (
     <>
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
-
           <div className="flex gap-2">
             <UnicStatsCard
-              icon={<MusicFilter size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Music Listened"}
+              icon={
+                <MusicFilter
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Music Listened"}
               value={quantidadePlays()}
             />
             <UnicStatsCard
-              icon={<MusicPlay size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Hours Listened"}
+              icon={
+                <MusicPlay
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Hours Listened"}
               value={quantidadeHoras()}
             />
           </div>
           <div className="flex gap-2">
             <UnicStatsCard
-              icon={<MusicPlay size="25" color="#B282FF" variant="Bold" className="mt-1" />} title={"Unique Musics"}
+              icon={
+                <MusicPlay
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Unique Musics"}
               value={musicasUnicas()}
             />
           </div>
 
           {/* playTime={Math.round(ele.totalMsPlayed / 3600000)} */}
-          <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">Top Artists</h1>
+          <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">
+            Top Artists
+          </h1>
           <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">
             {/* {encontrarArtistaMaisOuvido()} */}
           </h1>

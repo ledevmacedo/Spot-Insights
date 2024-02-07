@@ -1,9 +1,7 @@
 export function Button() {
-    return (
-        <>
-            <button className="">
-
-            </button>
-        </>
-    )
+  return (
+    <>
+      <button className=""></button>
+    </>
+  );
 }
