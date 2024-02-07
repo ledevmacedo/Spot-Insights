@@ -12,14 +12,18 @@ export default function App() {
   function quantidadePlays() {
     return fakehistory.length;
   }
-  function quantidadeHoras() {
+  function quantidadeMinutos() {
     const totalMilissegundos = fakehistory.reduce((acc, ele) => {
       return acc + ele.ms_played;
     }, 0);
 
-    const totalHoras = totalMilissegundos / 3600000;
+    const totalMinutos = totalMilissegundos / 60000;
+    const minutosFormatados = Math.round(totalMinutos);
+    const minutosString = minutosFormatados
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-    return Math.round(totalHoras);
+    return minutosString;
   }
 
   function musicasUnicas() {
@@ -85,8 +89,8 @@ export default function App() {
                   className="mt-1"
                 />
               }
-              title={"Hours Listened"}
-              value={quantidadeHoras()}
+              title={"Minutes Listened"}
+              value={quantidadeMinutos()}
             />
           </div>
           <div className="flex gap-2">
