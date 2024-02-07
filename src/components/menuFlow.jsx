@@ -1,5 +1,5 @@
 import { Calendar } from "iconsax-react";
-import { ButtonIcon } from "../../components/buttonIcon";
+import { ButtonIcon } from "./buttonIcon";
 
 export function MenuFlow() {
     return (

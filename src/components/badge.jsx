@@ -5,3 +5,11 @@ export function Badge({ text }) {
         </p>
     )
 }
+
+export function SmallBadge({ text }) {
+    return (
+        <p className="badge bg-purple-main-dark bg-opacity-90 py-1 rounded-xl text-purple-main font-xs">
+            {text}
+        </p>
+    )
+}
