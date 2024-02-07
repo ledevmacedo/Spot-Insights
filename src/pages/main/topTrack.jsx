@@ -1,9 +1,16 @@
-export function TopTrack(music, artist, trackImg) {
+import { Music } from "iconsax-react";
+
+export function TopTrack({ track, artist, trackImg }) {
     return (
         <>
             <div className="flex flex-row gap-2 items-start mb-4">
+                <div className="flex flex-row gap-2">
+                    <img className="rounded-md h-20" src={trackImg} />
+                </div>
                 <div className="flex flex-col">
-                    <h1 className="text-white-main font-normal text-xl"> dsd </h1>
+                    <p className="text-white-dark text-xs">Top Track</p>
+                    <h1 className="text-purple-main font-semibold text-xl"> {track} </h1>
+                    <h1 className="text-white-main font-normal text-md"> {artist} </h1>
                 </div>
             </div>
         </>
