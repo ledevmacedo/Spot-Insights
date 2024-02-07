@@ -1,11 +1,12 @@
 import { Music } from "iconsax-react";
+const placeholderMusic = '../src/assets/images/placeholderMusic.svg'
 
 export function TopTrack({ track, artist, trackImg }) {
     return (
         <>
             <div className="flex flex-row gap-2 items-start mb-4">
                 <div className="flex flex-row gap-2">
-                    <img className="rounded-md h-20" src={trackImg} />
+                    <img className="rounded-md h-20" src={trackImg == '' ? placeholderMusic : trackImg} />
                 </div>
                 <div className="flex flex-col">
                     <p className="text-white-dark text-xs">Top Track</p>
