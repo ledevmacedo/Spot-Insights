@@ -12,6 +12,16 @@ export default function App() {
   function quantidadePlays() {
     return fakehistory.length;
   }
+
+  function quantidadePlaysArtista(artista) {
+    const filtrarArtista = fakehistory.filter(
+      (element) => element.master_metadata_album_artist_name === artista
+    );
+    const playsPorArtista = filtrarArtista.length;
+
+    return playsPorArtista;
+  }
+
   function quantidadeMinutos() {
     const totalMilissegundos = fakehistory.reduce((acc, ele) => {
       return acc + ele.ms_played;
@@ -105,9 +115,20 @@ export default function App() {
               }
               title={"Unique Musics"}
               value={musicasUnicas()}
+            />{" "}
+            <UnicStatsCard
+              icon={
+                <MusicPlay
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Total Plays - Artist"}
+              value={quantidadePlaysArtista("J. Cole")}
             />
           </div>
-
           {/* playTime={Math.round(ele.totalMsPlayed / 3600000)} */}
           <h1 className="font-geist text-white-light text-3xl mt-6 mb-2">
             Top Artists
