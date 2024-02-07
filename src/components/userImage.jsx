@@ -1,7 +1,7 @@
 export function UserImage({ imageUrl }) {
     return (
         <div>
-            <img className="rounded-3xl h-20" src={imageUrl} alt="" />
+            <img className="rounded-xl h-8" src={imageUrl} alt="" />
         </div>
     );
 }

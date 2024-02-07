@@ -1,9 +1,10 @@
-export function TopTrack() {
+export function TopTrack(music, artist, trackImg) {
     return (
         <>
-            <div>
-                <UserInfo />
-                <h1 className="text-white-main font-semibold text-xl">Top Music</h1>
+            <div className="flex flex-row gap-2 items-start mb-4">
+                <div className="flex flex-col">
+                    <h1 className="text-white-main font-normal text-xl"> dsd </h1>
+                </div>
             </div>
         </>
         //Banner do usuario (artista mais ouvido)
