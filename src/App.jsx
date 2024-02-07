@@ -63,6 +63,24 @@ export default function App() {
     return quantidadeMusicasDiferentesArtista;
   }
 
+  function quantidadeMinutosArtista(artista) {
+    const filtrarArtista = fakehistory.filter(
+      (element) => element.master_metadata_album_artist_name === artista
+    );
+
+    const totalMilissegundos = filtrarArtista.reduce((acc, ele) => {
+      return acc + ele.ms_played;
+    }, 0);
+
+    const totalMinutos = totalMilissegundos / 60000;
+    const minutosFormatados = Math.round(totalMinutos);
+    const minutosString = minutosFormatados
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    return minutosString;
+  }
+
   function encontrarArtistaMaisOuvido() {
     const contagemDePlaysPorArtista = {};
     fakehistory.forEach((musica) => {
@@ -168,8 +186,8 @@ export default function App() {
                   className="mt-1"
                 />
               }
-              title={"Teste"}
-              value={quantidadePlaysArtista("J. Cole")}
+              title={"Minutes Listened - Artist"}
+              value={quantidadeMinutosArtista("J. Cole")}
             />
           </div>
           {/* playTime={Math.round(ele.totalMsPlayed / 3600000)} */}
