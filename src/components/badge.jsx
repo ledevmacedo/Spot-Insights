@@ -8,7 +8,7 @@ export function Badge({ text }) {
 
 export function SmallBadge({ text }) {
     return (
-        <p className="badge bg-purple-main-dark bg-opacity-90 py-1 rounded-xl text-purple-main font-xs">
+        <p className="flex bg-purple-main-dark text-xs bg-opacity-90 py-1 px-2 rounded-lg text-purple-main">
             {text}
         </p>
     )

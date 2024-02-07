@@ -3,6 +3,7 @@ import { UnicStatsCard } from "../home/unicStatsCard";
 import { Overview } from "./overview";
 import { TopTrack } from "./topTrack";
 import { UserInfo } from "./userInfo";
+import { musicasUnicas } from "../../utils/utils.js"
 
 export function HomeAccont() {
     return (
@@ -12,10 +13,10 @@ export function HomeAccont() {
             <TopTrack track={`Habits (Stay High)`} artist={"ToveLo"} trackImg={"https://i.scdn.co/image/ab67616d0000b273edbdf62135e9112a98bffa0c"} />
 
 
-
             <div className="flex flex-row gap-2">
-                <UnicStatsCard icon={"😊"} title={"Total Plays"} subtitle={"All Time"} value={100} />
-                <UnicStatsCard title={"Total Minutes"} subtitle={"Total"} value={100} icon={"😊"} />
+                <UnicStatsCard title={"Total Plays"} subtitle={"All Time"} value={100} />
+
+                <UnicStatsCard title={"Total Minutes"} subtitle={"Total"} value={100} />
             </div>
             < Overview />
             {/* <== todos os demais componentes que aparecem no main*/}
