@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  span {
+    @apply font-geist;
+  }
+
+}
+
 /* Geist Regular */
 @font-face {
   font-family: 'Geist';
@@ -15,7 +31,8 @@
   font-family: 'Geist';
   src: url('assets/fonts/Geist-Black.woff2') format('woff2');
   font-style: normal;
-  font-weight: 900; /* Usando 900 para fonte Black */
+  font-weight: 900;
+  /* Usando 900 para fonte Black */
 }
 
 /* Geist Bold */
