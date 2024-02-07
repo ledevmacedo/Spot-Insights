@@ -13,15 +13,6 @@ export default function App() {
     return fakehistory.length;
   }
 
-  function quantidadePlaysArtista(artista) {
-    const filtrarArtista = fakehistory.filter(
-      (element) => element.master_metadata_album_artist_name === artista
-    );
-    const playsPorArtista = filtrarArtista.length;
-
-    return playsPorArtista;
-  }
-
   function quantidadeMinutos() {
     const totalMilissegundos = fakehistory.reduce((acc, ele) => {
       return acc + ele.ms_played;
@@ -44,6 +35,32 @@ export default function App() {
 
     const quantidadeMusicasDiferentes = musicasUnicas.size;
     return quantidadeMusicasDiferentes;
+  }
+
+  function quantidadePlaysArtista(artista) {
+    const filtrarArtista = fakehistory.filter(
+      (element) => element.master_metadata_album_artist_name === artista
+    );
+    const playsPorArtista = filtrarArtista.length;
+
+    return playsPorArtista;
+  }
+
+  function quantidadeMusicasDiferentesArtista(artista) {
+    const filtrarArtista = fakehistory.filter(
+      (element) => element.master_metadata_album_artist_name === artista
+    );
+
+    // o Set vai filtrar pra tirar as músicas repetidas
+    const musicasUnicasArtista = new Set();
+
+    filtrarArtista.forEach((musica) => {
+      musicasUnicasArtista.add(musica.master_metadata_track_name);
+    });
+
+    const quantidadeMusicasDiferentesArtista = musicasUnicasArtista.size;
+
+    return quantidadeMusicasDiferentesArtista;
   }
 
   function encontrarArtistaMaisOuvido() {
@@ -126,6 +143,32 @@ export default function App() {
                 />
               }
               title={"Total Plays - Artist"}
+              value={quantidadePlaysArtista("J. Cole")}
+            />
+          </div>
+          <div className="flex gap-2">
+            <UnicStatsCard
+              icon={
+                <MusicPlay
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Unique Musics - Artist"}
+              value={quantidadeMusicasDiferentesArtista("J. Cole")}
+            />{" "}
+            <UnicStatsCard
+              icon={
+                <MusicPlay
+                  size="25"
+                  color="#B282FF"
+                  variant="Bold"
+                  className="mt-1"
+                />
+              }
+              title={"Teste"}
               value={quantidadePlaysArtista("J. Cole")}
             />
           </div>
