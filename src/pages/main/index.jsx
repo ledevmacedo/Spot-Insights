@@ -4,7 +4,7 @@ import { UserInfo } from "./userInfo";
 
 export function HomeAccont() {
     return (
-        <div className="h-dvh bg-purple-black px-4">
+        <div className="h-dvh bg-purple-black px-4 pt-4 flex flex-col gap-4">
             <UserInfo /> {/* <== Info do user e top track*/}
             <MenuFlow />  {/* <== Menu/Filter*/}
             <Overview /> {/* <== todos os demais componentes que aparecem no main*/}
