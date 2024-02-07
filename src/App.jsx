@@ -4,7 +4,7 @@ import history from "./data/history.json";
 import fakehistory from "./data/fakehistory.json";
 import { List } from "./components/list";
 import { ArtistsCard } from "./pages/home/artistsCard";
-import { UnicStatsCard } from "./pages/home/unicStatsCard";
+import { SingleStatsCard } from "./pages/home/singleStatsCard";
 import { MusicFilter, MusicPlay } from "iconsax-react";
 
 import { Play } from "iconsax-react";
@@ -113,7 +113,7 @@ export default function App() {
       <div className="h-dvh p-2 bg-purple-black">
         <div className="flex flex-col gap-2">
           <div className="flex gap-2">
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicFilter
                   size="25"
@@ -125,7 +125,7 @@ export default function App() {
               title={"Music Listened"}
               value={quantidadePlays()}
             />
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicPlay
                   size="25"
@@ -139,7 +139,7 @@ export default function App() {
             />
           </div>
           <div className="flex gap-2">
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicPlay
                   size="25"
@@ -151,7 +151,7 @@ export default function App() {
               title={"Unique Musics"}
               value={musicasUnicas()}
             />{" "}
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicPlay
                   size="25"
@@ -165,7 +165,7 @@ export default function App() {
             />
           </div>
           <div className="flex gap-2">
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicPlay
                   size="25"
@@ -177,7 +177,7 @@ export default function App() {
               title={"Unique Musics - Artist"}
               value={quantidadeMusicasDiferentesArtista("J. Cole")}
             />{" "}
-            <UnicStatsCard
+            <SingleStatsCard
               icon={
                 <MusicPlay
                   size="25"

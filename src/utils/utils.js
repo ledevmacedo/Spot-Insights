@@ -1,33 +1,5 @@
 import fakehistory from "../data/fakehistory.json";
 
-export function quantidadePlays() {
-    return fakehistory.length;
-}
-
-export function quantidadeMinutos() {
-    const totalMilissegundos = fakehistory.reduce((acc, ele) => {
-        return acc + ele.ms_played;
-    }, 0);
-
-    const totalMinutos = totalMilissegundos / 60000;
-    const minutosFormatados = Math.round(totalMinutos);
-    const minutosString = minutosFormatados
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-    return minutosString;
-}
-
-export function musicasUnicas() {
-    const musicasUnicas = new Set();
-    fakehistory.forEach((musica) => {
-        musicasUnicas.add(musica.master_metadata_track_name);
-    });
-
-    const quantidadeMusicasDiferentes = musicasUnicas.size;
-    return quantidadeMusicasDiferentes;
-}
-
 export function quantidadePlaysArtista(artista) {
     const filtrarArtista = fakehistory.filter(
         (element) => element.master_metadata_album_artist_name === artista

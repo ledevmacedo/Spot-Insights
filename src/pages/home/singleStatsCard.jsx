@@ -1,7 +1,7 @@
 import { MusicFilter } from "iconsax-react";
 import { SmallBadge } from "../../components/badge";
 
-export function UnicStatsCard({ icon, title, value, subtitle }) {
+export function SingleStatsCard({ badge, title, value, subValue }) {
     return (
         <>
             <div className="rounded-lg bg-purple-black-dark p-4 w-full">
@@ -11,9 +11,10 @@ export function UnicStatsCard({ icon, title, value, subtitle }) {
                             <h1 className="text-purple-main font-semibold text-4xl">
                                 {value}
                             </h1>
+                            <p className="text-purple-main-light font-semibold text-xs">{subValue}</p>
                         </div>
                         <div>
-                            <SmallBadge text={"All Time"} />
+                            <SmallBadge text={badge} />
                         </div>
                     </div>
 
