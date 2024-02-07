@@ -1,16 +1,25 @@
+import { MusicCircle } from "iconsax-react";
 import { TopCards } from "../../components/cards/topCards";
+import { MusicSquare } from "iconsax-react";
 
 
 export function Overview() {
     return (
         <>
             <div className="flex gap-2 flex-col justify-center items-center mt-10">
-                <TopCards />
+                <TopCards
+                    //Propriedades do card
+                    icon={<MusicSquare size="30" color="#6E31D1" variant="Bold" />}
+                    title={"Top Artists"}
+                    index={`#${1}`}
+                    indexArtist={"Adele"}
+                    firstMinutes={`${2.000} Minutes Listened`}
+                    //Propriedades das
+                    listIndex={"2"}
+                    listArtist={"Eleda"}
+                    listMinutes={200}
+                />
             </div>
         </>
-        //Banner do usuario (artista mais ouvido)
-        //Foto do usuário
-        //Nome do usuário
-        //transform -translate-x-1/2 translate-y-1/2
     )
 }

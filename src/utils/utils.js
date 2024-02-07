@@ -1,7 +1,7 @@
-import fakehistory from "../data/fakehistory.json";
+import history from "../data/history.json";
 
 export function quantidadePlaysArtista(artista) {
-    const filtrarArtista = fakehistory.filter(
+    const filtrarArtista = history.filter(
         (element) => element.master_metadata_album_artist_name === artista
     );
     const playsPorArtista = filtrarArtista.length;
@@ -10,7 +10,7 @@ export function quantidadePlaysArtista(artista) {
 }
 
 export function quantidadeMusicasDiferentesArtista(artista) {
-    const filtrarArtista = fakehistory.filter(
+    const filtrarArtista = history.filter(
         (element) => element.master_metadata_album_artist_name === artista
     );
 
@@ -27,7 +27,7 @@ export function quantidadeMusicasDiferentesArtista(artista) {
 }
 
 export function quantidadeMinutosArtista(artista) {
-    const filtrarArtista = fakehistory.filter(
+    const filtrarArtista = history.filter(
         (element) => element.master_metadata_album_artist_name === artista
     );
 
@@ -46,7 +46,7 @@ export function quantidadeMinutosArtista(artista) {
 
 export function encontrarArtistaMaisOuvido() {
     const contagemDePlaysPorArtista = {};
-    fakehistory.forEach((musica) => {
+    history.forEach((musica) => {
         const cantor = musica.master_metadata_album_artist_name;
         const plays = musica.ms_played || 0;
 

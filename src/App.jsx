@@ -1,6 +1,7 @@
 import React from "react";
 import { Home } from "./pages/home";
 import { Nav } from "./pages/home/Nav";
+
 export default function App() {
   return (
     <>

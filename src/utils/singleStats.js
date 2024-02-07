@@ -1,15 +1,15 @@
-import fakehistory from "../data/fakehistory.json";
+import history from "../data/history.json";
 
 
 //Total de Tracks já ouvidas
 export function quantidadePlays() {
-    return fakehistory.length;
+    return history.length;
 }
 
 //Total de Tracks unicas já ouvidas
 export function musicasUnicas() {
     const musicasUnicas = new Set();
-    fakehistory.forEach((musica) => {
+    history.forEach((musica) => {
         musicasUnicas.add(musica.master_metadata_track_name);
     });
 
@@ -19,7 +19,7 @@ export function musicasUnicas() {
 
 //Total de Minutos já ouvidos
 export function quantidadeMinutos() {
-    const totalMilissegundos = fakehistory.reduce((acc, ele) => {
+    const totalMilissegundos = history.reduce((acc, ele) => {
         return acc + ele.ms_played;
     }, 0);
 
@@ -33,7 +33,7 @@ export function quantidadeMinutos() {
 }
 
 export function quantidadeHoras() {
-    const totalMilissegundos = fakehistory.reduce((acc, ele) => {
+    const totalMilissegundos = history.reduce((acc, ele) => {
         return acc + ele.ms_played;
     }, 0);
 
