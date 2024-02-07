@@ -1,18 +1,9 @@
-import { Music } from "iconsax-react";
-const placeholderMusic = '../src/assets/images/placeholderMusic.svg'
-
-export function TopTrack({ track, artist, trackImg }) {
+export function TopTrack() {
     return (
         <>
-            <div className="flex flex-row gap-2 items-start mb-4">
-                <div className="flex flex-row gap-2">
-                    <img className="rounded-md h-20" src={trackImg == '' ? placeholderMusic : trackImg} />
-                </div>
-                <div className="flex flex-col">
-                    <p className="text-white-dark text-xs">Top Track</p>
-                    <h1 className="text-purple-main font-semibold text-xl"> {track} </h1>
-                    <h1 className="text-white-main font-normal text-md"> {artist} </h1>
-                </div>
+            <div>
+                <UserInfo />
+                <h1 className="text-white-main font-semibold text-xl">Top Music</h1>
             </div>
         </>
         //Banner do usuario (artista mais ouvido)

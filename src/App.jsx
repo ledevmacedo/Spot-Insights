@@ -7,23 +7,20 @@ import { ArtistsCard } from "./pages/home/artistsCard";
 import { UnicStatsCard } from "./pages/home/unicStatsCard";
 import { MusicFilter, MusicPlay } from "iconsax-react";
 
+
 import { Play } from "iconsax-react";
 export default function App() {
   function quantidadePlays() {
     return fakehistory.length;
   }
-  function quantidadeMinutos() {
+  function quantidadeHoras() {
     const totalMilissegundos = fakehistory.reduce((acc, ele) => {
       return acc + ele.ms_played;
     }, 0);
 
-    const totalMinutos = totalMilissegundos / 60000;
-    const minutosFormatados = Math.round(totalMinutos);
-    const minutosString = minutosFormatados
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    const totalHoras = totalMilissegundos / 3600000;
 
-    return minutosString;
+    return Math.round(totalHoras);
   }
 
   function musicasUnicas() {
@@ -63,6 +60,48 @@ export default function App() {
     return sortable;
   }
 
+  function timeOfDay() {
+let angArr = []
+    for (let i = 0; i < array.length; i++){
+        let j = 0
+        let date = new Date(array[i].ts)
+        let month = getmonth(date)
+        let hour = gethours(month)
+
+        angArr.push(hour)
+
+        let res = 0
+        for( let o = 0; o < angArr.length; o++){
+           res += angArr[o]
+
+        }
+        let average = sum / angArr.length;
+       
+
+ 
+        let periodoDoDia = "";
+    
+        if (average >= 6 && average < 12) {
+            periodoDoDia = "morning";
+        } else if (average >= 12 && average < 14) {
+            periodoDoDia = "midday";
+        } else if (average >= 14 && average < 19) {
+            periodoDoDia = "afternoon";
+        } else {
+            periodoDoDia = "evening/night";
+        }
+
+
+    }
+
+
+
+    return periodoDoDia;
+}
+
+
+
+
   return (
     <>
       <div className="h-dvh p-2 bg-purple-black">
@@ -89,8 +128,8 @@ export default function App() {
                   className="mt-1"
                 />
               }
-              title={"Minutes Listened"}
-              value={quantidadeMinutos()}
+              title={"Hours Listened"}
+              value={quantidadeHoras()}
             />
           </div>
           <div className="flex gap-2">
