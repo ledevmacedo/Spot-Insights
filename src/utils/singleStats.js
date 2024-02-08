@@ -83,7 +83,7 @@ export function mediaTempoDiario() {
 
   // dividir a soma pelo total de dias
   const divisao = totalMilissegundos / numeroDeDias;
-  
+
   const transformarParaMinutos = divisao / 60000;
   const minutosFormatados = Math.round(transformarParaMinutos);
 

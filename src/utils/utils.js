@@ -81,6 +81,8 @@ export function encontrarArtistaMaisOuvido() {
     sortable.push([cantor, contagemDePlaysPorArtista[cantor]]);
   }
 
+
+
   sortable.sort(function (a, b) {
     return b[1] - a[1]; // Ordenando de forma decrescente
   });

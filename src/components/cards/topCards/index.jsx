@@ -1,13 +1,9 @@
-import { MusicSquare } from "iconsax-react";
-import { Badge } from "../../badge";
-import { Clock } from "iconsax-react";
 import { ListCard } from "./listCard";
-import { Verify } from "iconsax-react";
 import { Link } from 'react-router-dom';
 import { LargeListCard } from "./largeListCard";
 import { ButtonIcon } from "../../buttonIcon";
-import { ArrowRight } from "iconsax-react";
-export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIndex, listTitle, listMinutes }) {
+
+export function TopCards({ icon, title, funcao }) {
     return (
         <>
             <div className="bg-purple-black-dark w-full 
@@ -17,23 +13,37 @@ export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIn
                     <p className="text-xl font-semibold">{title}</p>
                 </div>
                 <Link to={"/artistDetails"}>
-                    <LargeListCard
-                        index={index}
-                        indexArtist={indexArtist}
-                        firstMinutes={firstMinutes}
-                    />
+                    {/* {funcao.map((item, index) => (
+                        
+                    ))} */}
+                    {funcao.slice(0, 1).map((item, index) => (
+                        <LargeListCard key={index}
+                            index={index}
+                            name={item[0]}
+                            firstMinutes={item[1]}
+                        />
+                    ))}
+
                 </Link>
                 <div className="flex flex-col gap-2">
-                    <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
-                    <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
-                    <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
-                    <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
+                    {funcao.slice(1, 5).map((item, index) => (
+                        <ListCard key={index} listIndex={index + 2} listTitle={item[0]} listMinutes={item[1]} />
+                    ))}
+                </div>
+                <div className="flex flex-col gap-2 pt-4">
                     <Link to={"/hot100/tracks"} style={{ width: '100%' }}>
                         <ButtonIcon isFull={true} value={"Go to HOT 100"} />
                     </Link>
-
                 </div>
             </div>
         </>
     )
 }
+
+// {
+//     listar.map((item, index) => (
+//         <div className="flex flex-col gap-4" key={index}>
+//             <ListCard listIndex={index + 1} listTitle={item[0]} listMinutes={item[0]} trackCover={"../src/assets/images/artist.png"} />
+//         </div>
+//     ))
+// }

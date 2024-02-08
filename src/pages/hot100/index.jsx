@@ -6,7 +6,7 @@ export function Hot100() {
     return (
         <>{listar.map((item, index) => (
             <div className="flex flex-col gap-4" key={index}>
-                <ListCard listIndex={index + 1} listTitle={item[0]} listMinutes={item[1]} trackCover={"../src/assets/images/artist.png"} />
+                <ListCard listIndex={index + 1} listTitle={item[0]} listMinutes={item[0]} trackCover={"../src/assets/images/artist.png"} />
             </div>
         ))}
         </>

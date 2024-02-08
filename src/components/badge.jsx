@@ -1,7 +1,10 @@
-export function Badge({ text, num }) {
+export function Badge({ text, num, isFull }) {
     return (
-        <p className="badge bg-purple-main-dark bg-opacity-90 py-1 px-2 rounded-xl text-purple-main flex gap-2">
-            <p className="font-semibold text-purple-main-light">{num}</p> {text}
+
+        <p
+            style={{ width: isFull ? '100%' : '' }}
+            className="badge bg-purple-main-dark bg-opacity-[0.4] py-2 px-3 rounded-xl text-purple-main flex items-center content-center justify-center gap-2">
+            <p className="text-purple-main">{num}{text}</p>
         </p>
     )
 }
