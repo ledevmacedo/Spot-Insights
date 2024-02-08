@@ -1,4 +1,5 @@
 import history from "../data/history.json";
+import fakehistory from "../data/fakehistory.json";
 
 export function historySemPodcast() {
   return history.filter((element) => element.episode_show_name === null);
@@ -60,8 +61,10 @@ export function porcentagemPlaysArtista(artista) {
   return porcentagem.toFixed(2);
 }
 
+
 export function encontrarArtistaMaisOuvido() {
   const contagemDePlaysPorArtista = {};
+
   history.forEach((musica) => {
     const cantor = musica.master_metadata_album_artist_name;
     const plays = musica.ms_played || 0;
@@ -73,16 +76,15 @@ export function encontrarArtistaMaisOuvido() {
     }
   });
 
-  const cantor = musica.master_metadata_album_artist_name;
-  const plays = musica.ms_played || 0;
-
   let sortable = [];
-  for (let cantor in plays) {
-    sortable.push([cantor, plays[cantor]]);
+  for (let cantor in contagemDePlaysPorArtista) {
+    sortable.push([cantor, contagemDePlaysPorArtista[cantor]]);
   }
 
   sortable.sort(function (a, b) {
-    return a[1] - b[1];
+    return b[1] - a[1]; // Ordenando de forma decrescente
   });
-  return sortable;
+
+  return sortable.slice(1, 100);
 }
+

@@ -4,6 +4,7 @@ import { Nav } from "./pages/home/Nav";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { Artist } from "./pages/artist";
 import { Hot100 } from "./pages/hot100";
+import { Login } from "./pages/login";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path='/' element={<Home />} />
             <Route path='/artistDetails' element={<Artist />} />
             <Route path='/hot100/tracks' element={<Hot100 />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>
       </div>
