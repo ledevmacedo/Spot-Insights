@@ -5,6 +5,7 @@ import {
   quantidadeHoras,
   mediaTempoDiario,
 } from "../../utils/singleStats.js";
+
 import { SingleStatsCard } from "./singleStatsCard.jsx";
 
 export function SingleCardsGrouped() {
