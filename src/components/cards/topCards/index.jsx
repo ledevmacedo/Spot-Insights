@@ -5,6 +5,8 @@ import { ListCard } from "./listCard";
 import { Verify } from "iconsax-react";
 import { Link } from 'react-router-dom';
 import { LargeListCard } from "./largeListCard";
+import { ButtonIcon } from "../../buttonIcon";
+import { ArrowRight } from "iconsax-react";
 export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIndex, listTitle, listMinutes }) {
     return (
         <>
@@ -21,14 +23,15 @@ export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIn
                         firstMinutes={firstMinutes}
                     />
                 </Link>
-
-
-
                 <div className="flex flex-col gap-2">
                     <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
                     <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
                     <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
                     <ListCard listIndex={listIndex} listTitle={listTitle} listMinutes={listMinutes} />
+                    <Link to={"/hot100/tracks"} style={{ width: '100%' }}>
+                        <ButtonIcon isFull={true} value={"Go to HOT 100"} />
+                    </Link>
+
                 </div>
             </div>
         </>

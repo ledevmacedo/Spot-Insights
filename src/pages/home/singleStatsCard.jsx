@@ -2,6 +2,7 @@ import { MusicFilter } from "iconsax-react";
 import { SmallBadge } from "../../components/badge";
 import CountUp from 'react-countup';
 
+
 export function SingleStatsCard({ badge, title, value, subValue }) {
     return (
         <>
@@ -15,7 +16,7 @@ export function SingleStatsCard({ badge, title, value, subValue }) {
                             <h1 className="text-purple-main font-semibold text-4xl">
                                 <CountUp end={value} duration={10} />
                             </h1>
-                            <p className="text-purple-main-light font-semibold text-xs">{subValue}</p>
+                            <p className="text-purple-main opacity-80 font-semibold text-xs">{subValue}</p>
                         </div>
 
                     </div>
