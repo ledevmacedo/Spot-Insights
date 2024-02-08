@@ -10,12 +10,9 @@ export function LargeListCard({ index, indexArtist, firstMinutes }) {
                     <Badge text={"Top Tracks"} />
                     <div>
                         <div className="flex items-center gap-2">
-                            <p className="text-white-main text-3xl"> {index} {indexArtist} </p>
+                            <p className="text-white-main  text-3xl"> {index} {indexArtist} </p>
                             <Verify size="30" color="#B282FF" variant="Bulk" />
                         </div>
-                        <p className="text-white-main text-sm">
-                            {firstMinutes}
-                        </p>
                     </div>
                 </div>
             </div>

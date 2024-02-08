@@ -2,6 +2,7 @@ import { MusicFilter } from "iconsax-react";
 import { SmallBadge } from "../../components/badge";
 import CountUp from 'react-countup';
 
+
 export function SingleStatsCard({ badge, title, value, subValue }) {
     return (
         <>
