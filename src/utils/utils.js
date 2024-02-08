@@ -44,6 +44,22 @@ export function quantidadeMinutosArtista(artista) {
   return minutosString;
 }
 
+export function porcentagemPlaysArtista(artista) {
+  // primeiro pegar length do histórico
+  const totalPLays = history.length;
+
+  // depois length do artista
+  const filtrarArtista = history.filter(
+    (element) => element.master_metadata_album_artist_name === artista
+  );
+  const totalPlaysArtista = filtrarArtista.length;
+
+  // conta de porcentagem
+  const porcentagem = (totalPlaysArtista / totalPLays) * 100;
+
+  return porcentagem.toFixed(2);
+}
+
 export function encontrarArtistaMaisOuvido() {
   const contagemDePlaysPorArtista = {};
   history.forEach((musica) => {
