@@ -1,5 +1,9 @@
 import history from "../data/history.json";
 
+export function historySemPodcast() {
+  return history.filter((element) => element.episode_show_name === null);
+}
+
 export function quantidadePlaysArtista(artista) {
   const filtrarArtista = history.filter(
     (element) => element.master_metadata_album_artist_name === artista
@@ -37,11 +41,7 @@ export function quantidadeMinutosArtista(artista) {
 
   const totalMinutos = totalMilissegundos / 60000;
   const minutosFormatados = Math.round(totalMinutos);
-  const minutosString = minutosFormatados
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-  return minutosString;
+  return minutosFormatados;
 }
 
 export function porcentagemPlaysArtista(artista) {

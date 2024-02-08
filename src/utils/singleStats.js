@@ -1,4 +1,5 @@
 import history from "../data/history.json";
+import { historySemPodcast } from "./utils";
 
 //Total de Tracks já ouvidas
 export function quantidadePlays() {
@@ -7,10 +8,13 @@ export function quantidadePlays() {
 
 //Total de Tracks unicas já ouvidas
 export function musicasUnicas() {
-  const musicasUnicas = new Set();
-  history.forEach((musica) => {
+  let musicasUnicas = new Set();
+  historySemPodcast().forEach((musica) => {
     musicasUnicas.add(musica.master_metadata_track_name);
   });
+
+  // remover null
+  musicasUnicas = new Set([...musicasUnicas].filter((value) => value !== null));
 
   const quantidadeMusicasDiferentes = musicasUnicas.size;
   return quantidadeMusicasDiferentes;
@@ -24,11 +28,7 @@ export function quantidadeMinutos() {
 
   const totalMinutos = totalMilissegundos / 60000;
   const minutosFormatados = Math.round(totalMinutos);
-  //   const minutosString = minutosFormatados
-  //     .toString()
-  //     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-  //   return minutosString;
   return minutosFormatados;
 }
 
