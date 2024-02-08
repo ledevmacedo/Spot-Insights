@@ -1,7 +1,7 @@
 import { MusicCircle } from "iconsax-react";
 import { TopCards } from "../../components/cards/topCards";
 import { MusicSquare } from "iconsax-react";
-
+import { Top100 } from "../../utils/filters.js"
 
 export function Overview() {
     return (
@@ -20,6 +20,7 @@ export function Overview() {
                     listMinutes={200}
                 />
             </div>
+            <p className="text-white-main">Top List: {Top100()}</p>
         </>
     )
 }
