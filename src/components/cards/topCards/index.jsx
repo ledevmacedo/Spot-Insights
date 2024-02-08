@@ -3,7 +3,8 @@ import { Badge } from "../../badge";
 import { Clock } from "iconsax-react";
 import { ListCard } from "./listCard";
 import { Verify } from "iconsax-react";
-
+import { Link } from 'react-router-dom';
+import { LargeListCard } from "./largeListCard";
 export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIndex, listArtist, listMinutes }) {
     return (
         <>
@@ -13,21 +14,16 @@ export function TopCards({ icon, title, index, indexArtist, firstMinutes, listIn
                     {icon}
                     <p className="text-xl font-semibold">{title}</p>
                 </div>
-                <div className="flex flex-row gap-1">
-                    <div className="flex gap-4 flex-col items-start justify-end bg-purple-black rounded-lg w-full h-96 p-4"
-                    >
-                        <Badge text={"Top Tracks"} />
-                        <div>
-                            <div className="flex items-center gap-2">
-                                <p className="text-white-main text-3xl"> {index} {indexArtist} </p>
-                                <Verify size="30" color="#B282FF" variant="Bulk" />
-                            </div>
-                            <p className="text-white-main text-sm">
-                                {firstMinutes}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <Link to={"/artistDetails"}>
+                    <LargeListCard
+                        index={index}
+                        indexArtist={indexArtist}
+                        firstMinutes={firstMinutes}
+                    />
+                </Link>
+
+
+
                 <div className="flex flex-col gap-2">
                     <ListCard listIndex={listIndex} listArtist={listArtist} listMinutes={listMinutes} />
                     <ListCard listIndex={listIndex} listArtist={listArtist} listMinutes={listMinutes} />

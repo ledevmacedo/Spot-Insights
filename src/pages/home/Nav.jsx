@@ -18,7 +18,7 @@ export function Nav({ userID, userName, picture }) {
                     </div>
                 </div>
                 <div className="flex flex-row items-center w-4/12">
-                    <img src="../../assets/images/logo.svg" className="h-8 w-8" alt="" />
+                    <img src="../src/assets/images/logo.svg" className="h-8 w-8" alt="" />
                 </div>
                 <div>
                     <Setting2 className="cursor-pointer" size="24" color="#fff" variant="Bulk" />
