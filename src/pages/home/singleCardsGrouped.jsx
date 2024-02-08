@@ -4,8 +4,8 @@ import { SingleStatsCard } from "./singleStatsCard.jsx"
 
 export function SingleCardsGrouped() {
     return (
-        <div className="bg-purple-black flex flex-col gap-2">
-            <div className="flex flex-row gap-2">
+        <div className="bg-purple-black flex flex-col gap-4">
+            <div className="flex flex-row gap-4">
                 <SingleStatsCard title={"Total Tracks"} badge={"All Time"} value={quantidadePlays()} />
                 <SingleStatsCard title={"Total Unique Tracks"} badge={"All Time"} value={musicasUnicas()} />
             </div>
