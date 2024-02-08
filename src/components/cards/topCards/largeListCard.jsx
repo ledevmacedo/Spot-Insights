@@ -14,6 +14,7 @@ export function LargeListCard({ index, indexArtist, firstMinutes }) {
                             <Verify size="30" color="#B282FF" variant="Bulk" />
                         </div>
                     </div>
+    
                 </div>
             </div>
         </>
