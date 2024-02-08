@@ -16,7 +16,7 @@ export function Overview() {
                     firstMinutes={`${2.000} Minutes Listened`}
                     //Propriedades das
                     listIndex={"2"}
-                    listArtist={"Eleda"}
+                    listTitle={"Eleda"}
                     listMinutes={200}
                 />
             </div>
