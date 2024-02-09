@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ListCardLarge } from "../../components/cards/topCards/listCardLarge";
 import { filterTopArtists } from "../../utils/utils";
+import { MenuFlow } from "../../components/menuFlow";
 
 export function HotArtists() {
     const listar = filterTopArtists()
@@ -8,6 +9,7 @@ export function HotArtists() {
         <>
             <div className="text-white-main font-2xl text-center pb-10">Your Top 100 Artists Listened!</div>
 
+            <MenuFlow />
             <div className="flex flex-col gap-4" >
                 {listar.map((item, index) => (
                     <Link key={index} to={`../artistDetails/${item[0]}`}>

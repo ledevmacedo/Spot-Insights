@@ -5,7 +5,7 @@ import { filterTopMusics } from "../../utils/utils.js";
 
 
 export function ArtistShortStats({ currentArtist, currentMusic, currentPosition }) {
-    
+
     return (
         <>
             <div className="flex flex-col gap-4">

@@ -14,6 +14,7 @@ export function quantidadePlaysArtista(artista) {
   return playsPorArtista;
 }
 
+//para fazer o list do artist list musicas
 export function quantidadeMusicasDiferentesArtista(artista) {
   const filtrarArtista = history.filter(
     (element) => element.master_metadata_album_artist_name === artista
@@ -147,7 +148,6 @@ export function filterTopAlbum() {
 
   return sortable.slice(1, 101);
 }
-
 
 export function findIndex(currentArtist) {
   let artistList = filterTopArtists()
