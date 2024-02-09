@@ -11,9 +11,9 @@ export function HotTracks() {
             <MenuFlow />
             <div className="flex flex-col gap-4" >
                 {listar.map((item, index) => (
-                    <Link key={index} to={`../artistDetails/${item[0]}`}>
-                        <ListCardLarge key={index} listIndex={index + 1} listTitle={item[0]} listMinutes={item[1]} trackCover={"../src/assets/images/artist.png"} />
-                    </Link>
+                    // <Link key={index} to={`../artistDetails/${item[0]}`}>
+                    <ListCardLarge key={index} listIndex={index + 1} listTitle={item[0]} listMinutes={item[1]} trackCover={"../src/assets/images/artist.png"} />
+                    // </Link>
                 ))}
             </div>
 

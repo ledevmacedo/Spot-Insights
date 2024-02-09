@@ -18,7 +18,6 @@ export function ArtistSingleCard({ artist, season }) {
                             </div>
 
                             <div>
-                                <p className="text-purple-main">Your favorite artist in {season} </p>
                             </div>
                         </div>
 

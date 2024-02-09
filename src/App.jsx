@@ -24,8 +24,8 @@ export default function App() {
             <Route path='*' element={<Home />} />
             <Route path='/artistDetails/:artist' element={<Artist />} />
             <Route path='/HotArtists' element={<HotArtists />} />
-            <Route path='/HotAlbuns' element={<HotAlbuns />} />
-            <Route path='/HotTracks' element={<HotTracks />} />
+            {/* <Route path='/HotAlbuns' element={<HotAlbuns />} />
+            <Route path='/HotTracks' element={<HotTracks />} /> */}
           </Routes>
         </BrowserRouter>
       </div>

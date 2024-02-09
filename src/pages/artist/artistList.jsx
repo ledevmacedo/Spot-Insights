@@ -14,7 +14,7 @@ export function ArtistList() {
                     {/* {allmusics.map((item, index) => (
                         <p key={index}>ola mundo</p>
                     ))} */}
-                    <ListCard listIndex={"1"} listTitle={"SkyFall"} listMinutes={"200"} trackCover={"../src/assets/images/skyfall.jpg"} />
+                    <ListCard listIndex={"1"} listTitle={""} listMinutes={""} trackCover={"../src/assets/images/skyfall.jpg"} />
                     {/* {listar.map((item, index) => (
                         <Link key={index} to={`../artistDetails/${item[0]}`}>
                             <ListCardLarge key={index} listIndex={index + 1} listTitle={item[0]} listMinutes={item[1]} trackCover={"../src/assets/images/artist.png"} />

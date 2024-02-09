@@ -12,9 +12,9 @@ export function HotArtists() {
             <MenuFlow />
             <div className="flex flex-col gap-4" >
                 {listar.map((item, index) => (
-                    <Link key={index} to={`../artistDetails/${item[0]}`}>
+                    // <Link key={index} to={`../artistDetails/${item[0]}`}>
                         <ListCardLarge listIndex={index + 1} listTitle={item[0]} listMinutes={item[1]} trackCover={"../src/assets/images/artist.png"} />
-                    </Link>
+                    // </Link>
                 ))}
             </div>
 
