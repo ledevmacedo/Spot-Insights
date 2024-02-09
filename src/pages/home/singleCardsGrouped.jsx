@@ -23,11 +23,17 @@ export function SingleCardsGrouped() {
           value={musicasUnicas()}
         />
       </div>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-4">
         <SingleStatsCard
           title={"Minutes Listened"}
           badge={"All Time"}
           value={`${quantidadeMinutos()}`}
+          subValue={"Minutes"}
+        />
+        <SingleStatsCard
+          title={"Daily Average"}
+          badge={"All Time"}
+          value={`${mediaTempoDiario()}`}
           subValue={"Minutes"}
         />
       </div>
