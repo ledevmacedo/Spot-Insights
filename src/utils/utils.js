@@ -148,9 +148,20 @@ export function filterTopAlbum() {
   return sortable.slice(1, 101);
 }
 
+
 export function findIndex(currentArtist) {
-  const topArtists = filterTopArtists();
-  const artistIndex = topArtists.findIndex(artist => artist === currentArtist);
-  return artistIndex;
+  let artistList = filterTopArtists()
+
+  const indexOf = (currentArtist) => {
+    for (let i = 0; i < artistList.length; i++) {
+      if (artistList[i][0] === currentArtist) {
+        return i + 1;
+      }
+    }
+  };
+
+  return indexOf(currentArtist)
 }
+
+
 
