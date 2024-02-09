@@ -1,13 +1,11 @@
 import { Setting2 } from "iconsax-react";
-import { UserImage } from "../../components/UserImage";
-
 
 export function Nav({ userID, userName, picture }) {
     return (
         <>
             <div className="flex flex-row gap-2 items-center justify-between mb-4">
                 <div className="flex flex-row gap-2 items-center w-4/12">
-                    <UserImage imageUrl={"../src/assets/images/placeholder.jpg"} />
+                    {/* <UserImage imageUrl={""} /> */}
                     <div className="flex flex-col">
                         <h1 className="text-white-dark text-xs">
                             {userID}

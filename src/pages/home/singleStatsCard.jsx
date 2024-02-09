@@ -6,7 +6,7 @@ import CountUp from 'react-countup';
 export function SingleStatsCard({ badge, title, value, subValue }) {
     return (
         <>
-            <div className="rounded-lg bg-purple-black-dark p-4 w-full">
+            <div className="rounded-lg bg-purple-black-dark  p-4 w-full">
                 <div className="flex items-start gap-4 flex-col justify-center content-center">
                     <div>
                         <SmallBadge text={badge} num={""} />

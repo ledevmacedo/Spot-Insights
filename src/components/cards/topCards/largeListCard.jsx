@@ -5,7 +5,7 @@ export function LargeListCard({ index, name, firstMinutes }) {
     return (
         <>
 
-            <div className="flex gap-4 flex-col items-start justify-end bg-purple-black rounded-lg w-full h-96 p-4"
+            <div className="flex gap-4 flex-col items-start justify-end bg-purple-black hover:bg-opacity-80 rounded-lg w-full h-96 p-4"
             >
                 {/* <Badge text={"Top Tracks"} /> */}
                 <div className="flex">
