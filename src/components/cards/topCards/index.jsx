@@ -2,9 +2,10 @@ import { ListCard } from "./listCard";
 import { Link } from 'react-router-dom';
 import { LargeListCard } from "./largeListCard";
 import { ButtonIcon } from "../../buttonIcon";
-
+import { filterTopArtists } from "../../../utils/utils";
 
 export function TopCards({ icon, title, funcao, goPage }) {
+    let e = filterTopArtists()
     return (
         <>
             <div className="bg-purple-black-dark w-full 
@@ -13,19 +14,18 @@ export function TopCards({ icon, title, funcao, goPage }) {
                     {icon}
                     <p className="text-xl font-semibold">{title}</p>
                 </div>
-                <Link to={"/artistDetails"}>
-                    {funcao.slice(0, 1).map((item, index) => (
-                        <LargeListCard key={index}
-                            index={index + 1}
-                            name={item[0]}
-                            firstMinutes={item[1]}
-                        />
-                    ))}
-
+                <Link to={`artistDetails/${funcao[0][0]}`}>
+                    <LargeListCard
+                        index={funcao.length + 1 - e.length}
+                        name={funcao[0][0]}
+                        firstMinutes={funcao[0][1]}
+                    />
                 </Link>
                 <div className="flex flex-col gap-2">
                     {funcao.slice(1, 5).map((item, index) => (
-                        <ListCard key={index} listIndex={index + 2} listTitle={item[0]} listMinutes={item[1]} />
+                        <Link key={index} to={`artistDetails/${item[0]}`}>
+                            <ListCard listIndex={index + 2} listTitle={item[0]} listMinutes={item[1]} />
+                        </Link>
                     ))}
                 </div>
                 <div className="flex flex-col gap-2 pt-4">

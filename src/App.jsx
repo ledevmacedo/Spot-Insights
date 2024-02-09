@@ -8,9 +8,11 @@ import { HotTracks } from "./pages/HotTracks";
 import { HotArtists } from "./pages/hotArtists";
 
 import { Login } from "./pages/login";
+import { filterTopArtists } from "./utils/utils";
 
 
 export default function App() {
+  let artists = filterTopArtists()
   return (
     <>
 
@@ -21,7 +23,7 @@ export default function App() {
           </Link>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/artistDetails' element={<Artist />} />
+            <Route path='/artistDetails/:artist' element={<Artist />} />
             <Route path='/HotArtists' element={<HotArtists />} />
             <Route path='/HotAlbuns' element={<HotAlbuns />} />
             <Route path='/HotTracks' element={<HotTracks />} />
