@@ -1,9 +1,6 @@
 
 ![Logo](logo.png)
 
-
-# SPOT INSIGHTS
-
 Estre projeto tem como objetivo apresentar informações com base nos arquivos Json do Spotify.
 
 
