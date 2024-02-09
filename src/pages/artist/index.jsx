@@ -1,19 +1,18 @@
 import { LargeListCard } from "../../components/cards/topCards/largeListCard";
 import { ListCard } from "../../components/cards/topCards/listCard";
 import { useLocation, useParams } from "react-router-dom";
-import { ArtistShortStats } from "./ArtistShortStats";
+import { ArtistShortStats } from "./artistShortStats";
 import { ArtistHotStat } from "./artistHotStat";
 import { ArtistList } from "./artistList";
 import { ArtistSingleCard } from "./artistSingleCard";
+import { findIndex } from "../../utils/utils";
 
-
-// index, indexArtist, firstMinutes
-export function Artist() {
+export function Artist(currentIndex) {
     let { artist } = useParams();
     return (
         <>
             <ArtistSingleCard artist={artist} season={"Winter ❄️"} />
-            <ArtistHotStat valueTop={"item[1]"} valuePercent={20} />
+            <ArtistHotStat valueTop={10} valuePercent={20} />
             {/* <ArtistShortStats currentPosition={id} currentArtist={artist} /> */}
             < ArtistShortStats currentArtist={artist} />
             <div className="w-full rounded-xl bg-purple-dark-light p-4 text-white-main font-2xl">

@@ -7,7 +7,7 @@ export function Nav({ userID, userName, picture }) {
         <>
             <div className="flex flex-row gap-2 items-center justify-between mb-4">
                 <div className="flex flex-row gap-2 items-center w-4/12">
-                    <UserImage imageUrl={picture} />
+                    <UserImage imageUrl={"../src/assets/images/placeholder.jpg"} />
                     <div className="flex flex-col">
                         <h1 className="text-white-dark text-xs">
                             {userID}

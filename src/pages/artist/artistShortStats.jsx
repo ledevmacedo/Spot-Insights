@@ -2,7 +2,10 @@ import { SingleStatsCard } from "../home/singleStatsCard";
 import { quantidadePlaysArtista, quantidadeMusicasDiferentesArtista, quantidadeMinutosArtista } from "../../utils/utils.js"
 import { filterTopMusics } from "../../utils/utils.js";
 
+
+
 export function ArtistShortStats({ currentArtist, currentMusic, currentPosition }) {
+    
     return (
         <>
             <div className="flex flex-col gap-4">

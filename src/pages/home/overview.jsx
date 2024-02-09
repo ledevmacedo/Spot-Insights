@@ -10,6 +10,7 @@ export function Overview() {
         <>
             <div className="flex gap-4 flex-col justify-center items-center">
                 <TopCards
+                    currentIndex={10}
                     //função a ser chamada
                     funcao={fiveArtists}
                     //Propriedades do card

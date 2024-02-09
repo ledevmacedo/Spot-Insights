@@ -4,7 +4,7 @@ import { LargeListCard } from "./largeListCard";
 import { ButtonIcon } from "../../buttonIcon";
 import { filterTopArtists } from "../../../utils/utils";
 
-export function TopCards({ icon, title, funcao, goPage }) {
+export function TopCards({ icon, title, funcao, goPage, currentIndex }) {
     let e = filterTopArtists()
     return (
         <>
@@ -23,7 +23,7 @@ export function TopCards({ icon, title, funcao, goPage }) {
                 </Link>
                 <div className="flex flex-col gap-2">
                     {funcao.slice(1, 5).map((item, index) => (
-                        <Link key={index} to={`artistDetails/${item[0]}`}>
+                        <Link key={index} currentIndex={currentIndex} to={`artistDetails/${item[0]}`}>
                             <ListCard listIndex={index + 2} listTitle={item[0]} listMinutes={item[1]} />
                         </Link>
                     ))}

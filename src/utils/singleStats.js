@@ -89,3 +89,4 @@ export function mediaTempoDiario() {
 
   return minutosFormatados;
 }
+

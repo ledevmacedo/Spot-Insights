@@ -15,9 +15,7 @@ export function LargeListCard({ index, name, firstMinutes }) {
                             <Verify size="30" color="#B282FF" variant="Bulk" />
                         </div>
                         <div className="flex">
-                            <p className="text-white-main text-opacitTotal Tracks
-
-y-[0.4]">{firstMinutes} Minutes Listened</p>
+                            <p className="text-white-main text-opacitTotal Tracks y-[0.4]">{firstMinutes} Minutes Listened</p>
                         </div>
                     </div>
 

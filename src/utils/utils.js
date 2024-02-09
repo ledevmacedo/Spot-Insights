@@ -93,6 +93,7 @@ export function filterTopArtists() {
   const countPlays = {};
 
   history.forEach((musica) => {
+
     const item = musica.master_metadata_album_artist_name;
     const plays = musica.ms_played || 0;
 
@@ -101,6 +102,7 @@ export function filterTopArtists() {
 
     if (countPlays[item]) {
       countPlays[item] += minutosArredondados;
+
     } else {
       countPlays[item] = minutosArredondados;
     }
@@ -145,3 +147,10 @@ export function filterTopAlbum() {
 
   return sortable.slice(1, 101);
 }
+
+export function findIndex(currentArtist) {
+  const topArtists = filterTopArtists();
+  const artistIndex = topArtists.findIndex(artist => artist === currentArtist);
+  return artistIndex;
+}
+

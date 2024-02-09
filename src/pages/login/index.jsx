@@ -7,8 +7,9 @@ export function Login() {
         <>
             <div>
                 <p className='text-white-main flex flex-col font-2xl'>
-                    <p>{resultados[0][0]}</p>
-                    <p>{resultados[0][1]}</p>
+                    <p>{resultados[5][0]}</p>
+                    <p>{resultados[5][1]}</p>
+                    <p>{resultados[5][2]}</p>
                 </p>
 
                 <br />

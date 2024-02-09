@@ -1,6 +1,8 @@
 import CountUp from 'react-countup';
+import { filterTopMusics } from '../../utils/utils';
 
 export function ArtistHotStat({ valueTop, valuePercent }) {
+
     return (
         <>
             <div className="flex gap-4 w-full content-center justify-start items-center ">
