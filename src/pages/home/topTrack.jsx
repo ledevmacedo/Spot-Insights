@@ -1,7 +1,10 @@
 import { Music } from "iconsax-react";
+import { filterTopMusics } from "../../utils/utils";
 const placeholderMusic = '../src/assets/images/placeholderMusic.svg'
 
+
 export function TopTrack({ track, artist, trackImg }) {
+
     return (
         <>
             <div className="flex flex-row gap-2 items-start mb-4">
@@ -21,3 +24,4 @@ export function TopTrack({ track, artist, trackImg }) {
         //transform -translate-x-1/2 translate-y-1/2
     )
 }
+

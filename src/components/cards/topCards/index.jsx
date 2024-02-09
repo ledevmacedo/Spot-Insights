@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { LargeListCard } from "./largeListCard";
 import { ButtonIcon } from "../../buttonIcon";
 
-export function TopCards({ icon, title, funcao,goPage }) {
+
+export function TopCards({ icon, title, funcao, goPage }) {
     return (
         <>
             <div className="bg-purple-black-dark w-full 
@@ -13,9 +14,6 @@ export function TopCards({ icon, title, funcao,goPage }) {
                     <p className="text-xl font-semibold">{title}</p>
                 </div>
                 <Link to={"/artistDetails"}>
-                    {/* {funcao.map((item, index) => (
-                        
-                    ))} */}
                     {funcao.slice(0, 1).map((item, index) => (
                         <LargeListCard key={index}
                             index={index + 1}
