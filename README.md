@@ -1,5 +1,5 @@
 
-![Logo]('./logo.png')
+![Logo](logo.png)
 
 
 # SPOT INSIGHTS
@@ -54,4 +54,6 @@ Inicie o servidor
 ```bash
   npm run start
 ```
+
+
 
