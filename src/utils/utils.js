@@ -87,7 +87,7 @@ export function filterTopMusics() {
     return b[1] - a[1]; // Ordenando de forma decrescente
   });
 
-  return sortable.slice(1, 100);
+  return sortable.slice(1, 101);
 }
 export function filterTopArtists() {
   const countPlays = {};
@@ -115,7 +115,7 @@ export function filterTopArtists() {
     return b[1] - a[1]; // Ordenando de forma decrescente
   });
 
-  return sortable.slice(1, 100);
+  return sortable.slice(1, 101);
 }
 export function filterTopAlbum() {
   const countPlays = {};
@@ -143,5 +143,5 @@ export function filterTopAlbum() {
     return b[1] - a[1]; // Ordenando de forma decrescente
   });
 
-  return sortable.slice(1, 100);
+  return sortable.slice(1, 101);
 }
