@@ -3,7 +3,10 @@ import { Home } from "./pages/home";
 import { Nav } from "./pages/home/Nav";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { Artist } from "./pages/artist";
-import { Hot100 } from "./pages/hot100";
+import { HotAlbuns } from "./pages/hotAlbuns";
+import { HotTracks } from "./pages/HotTracks";
+import { HotArtists } from "./pages/hotArtists";
+
 import { Login } from "./pages/login";
 
 
@@ -19,7 +22,9 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/artistDetails' element={<Artist />} />
-            <Route path='/hot100/tracks' element={<Hot100 />} />
+            <Route path='/HotArtists' element={<HotArtists />} />
+            <Route path='/HotAlbuns' element={<HotAlbuns />} />
+            <Route path='/HotTracks' element={<HotTracks />} />
             <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>

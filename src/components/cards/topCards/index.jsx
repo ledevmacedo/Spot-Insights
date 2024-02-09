@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { LargeListCard } from "./largeListCard";
 import { ButtonIcon } from "../../buttonIcon";
 
-export function TopCards({ icon, title, funcao }) {
+export function TopCards({ icon, title, funcao,goPage }) {
     return (
         <>
             <div className="bg-purple-black-dark w-full 
@@ -31,7 +31,7 @@ export function TopCards({ icon, title, funcao }) {
                     ))}
                 </div>
                 <div className="flex flex-col gap-2 pt-4">
-                    <Link to={"/hot100/tracks"} style={{ width: '100%' }}>
+                    <Link to={goPage} style={{ width: '100%' }}>
                         <ButtonIcon isFull={true} value={"Go to HOT 100"} />
                     </Link>
                 </div>

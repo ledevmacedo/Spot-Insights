@@ -14,19 +14,23 @@ export function Overview() {
                     funcao={fiveArtists}
                     //Propriedades do card
                     icon={<Microphone2 size="30" color="#6E31D1" variant="Bold" />}
-                    title={"Top Artists"} />
+                    title={"Top Artists"}
+                    goPage={"/HotArtists"} />
                 <TopCards
                     //função a ser chamada
                     funcao={fiveMusics}
                     //Propriedades do card
                     icon={<Music size="30" color="#6E31D1" variant="Bold" />}
-                    title={"Top Musics"} />
+                    title={"Top Musics"}
+                    goPage={"/HotTracks"} />
+
                 <TopCards
                     //função a ser chamada
                     funcao={fiveAlbuns}
                     //Propriedades do card
                     icon={<MusicDashboard size="30" color="#6E31D1" variant="Bold" />}
-                    title={"Top Albuns"} />
+                    title={"Top Albuns"}
+                    goPage={"/HotAlbuns"} />
 
             </div>
 
