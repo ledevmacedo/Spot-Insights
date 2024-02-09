@@ -7,7 +7,7 @@ export function ListCardLarge({ listIndex, listTitle, listMinutes, trackCover })
                 <div className="bg-purple-black-dark rounded-lg px-4 py-4 flex justify-between">
                     <div className="flex gap-2 text-white-main content-center items-center text-lg">
                         <p># {listIndex}</p>
-                        <img className="rounded-md h-10 w-10" src={trackCover} alt="" />
+                        <div className="rounded-md h-10 w-10 bg-purple-black-dark" alt="" />
                         <p>{listTitle}</p>
                     </div>
                     <div className="flex flex-row gap-1 content-center  items-center">

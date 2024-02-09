@@ -9,7 +9,7 @@ export function ArtistSingleCard({ artist, season }) {
             <div className="bg-purple-black-dark w-full 
             p-4 text-white-main flex flex-col rounded-xl gap-2">
                 <div className="flex flex-col  gap-1">
-                    <img className="w-full h-96 rounded-lg" src="../src/assets/images/artist.webp" alt="" />
+                    <div className="w-full h-96 rounded-lg bg-purple-black-dark"  alt="" />
                     <div className="flex items-start flex-col gap-4">
                         <div className="flex items-start gap-2 pt-2 flex-col">
                             <div className="flex items-center gap-2 pt-2">

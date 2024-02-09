@@ -7,7 +7,7 @@ export function ListCard({ listIndex, listTitle, listMinutes, trackCover }) {
                 <div className="bg-purple-black rounded-lg px-4 py-2 flex justify-between">
                     <div className="flex gap-2 text-white-main content-center items-center text-md">
                         <p># {listIndex}</p>
-                        <img className="rounded-md h-8 w-8" src={trackCover} alt="" />
+                        <div className="rounded-md h-8 w-8 bg-purple-black-dark "  alt="" />
                         <p>{listTitle}</p>
                     </div>
                     <div className="flex flex-row gap-1 content-center  items-center">

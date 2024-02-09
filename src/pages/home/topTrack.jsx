@@ -9,7 +9,8 @@ export function TopTrack({ track, artist, trackImg }) {
         <>
             <div className="flex flex-row gap-2 items-start mb-4">
                 <div className="flex flex-row gap-2">
-                    <img className="rounded-md h-20" src={trackImg == '' ? placeholderMusic : trackImg} />
+                    <div className="rounded-md h-20 bg-purple-black-dark" />
+                    {/* src={trackImg == '' ? placeholderMusic : trackImg} */}
                 </div>
                 <div className="flex flex-col">
                     <p className="text-white-dark text-xs">Top Track</p>

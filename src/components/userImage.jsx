@@ -3,8 +3,8 @@ export function UserImage({ imageUrl }) {
 
     return (
         <div>
-            <img className="rounded-xl h-8 w-8 bg-purple-dark-light"
-                src={imageUrl == '' ? placeholderUser : imageUrl} alt="" />
+            <div className="rounded-xl h-8 w-8 bg-purple-black-dark" />
+            {/* src={imageUrl == '' ? placeholderUser : imageUrl} alt=""  */}
         </div>
     );
 }
