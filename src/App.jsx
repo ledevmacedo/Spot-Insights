@@ -6,8 +6,6 @@ import { Artist } from "./pages/artist";
 import { HotAlbuns } from "./pages/hotAlbuns";
 import { HotTracks } from "./pages/HotTracks";
 import { HotArtists } from "./pages/hotArtists";
-
-import { Login } from "./pages/login";
 import { filterTopArtists } from "./utils/utils";
 
 
@@ -23,11 +21,11 @@ export default function App() {
           </Link>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='*' element={<Home />} />
             <Route path='/artistDetails/:artist' element={<Artist />} />
             <Route path='/HotArtists' element={<HotArtists />} />
             <Route path='/HotAlbuns' element={<HotAlbuns />} />
             <Route path='/HotTracks' element={<HotTracks />} />
-            <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>
       </div>

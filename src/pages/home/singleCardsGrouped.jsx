@@ -28,7 +28,6 @@ export function SingleCardsGrouped() {
           title={"Minutes Listened"}
           badge={"All Time"}
           value={`${quantidadeMinutos()}`}
-          subValue={"Minutes"}
         />
         <SingleStatsCard
           title={"Daily Average"}
