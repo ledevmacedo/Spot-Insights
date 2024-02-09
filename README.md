@@ -55,5 +55,9 @@ Inicie o servidor
   npm run start
 ```
 
+## Melhorias
 
-
+- Aplicar responsividade.
+- Criar funções restantes.
+- Incluir camp para usuário anexar seu ficheiro.
+- incluir animações framer motion
