@@ -1,8 +1,8 @@
 import { ListCard } from "../../components/cards/topCards/listCard";
-import { encontrarArtistaMaisOuvido } from "../../utils/utils";
+import { filterTopArtists } from "../../utils/utils";
 
 export function Hot100() {
-    const listar = encontrarArtistaMaisOuvido()
+    const listar = filterTopArtists()
     return (
         <>{listar.map((item, index) => (
             <div className="flex flex-col gap-4" key={index}>

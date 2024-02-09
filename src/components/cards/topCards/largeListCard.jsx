@@ -11,7 +11,7 @@ export function LargeListCard({ index, name, firstMinutes }) {
                 <div className="flex">
                     <div className="flex justify-between flex-col items-center gap-2 ">
                         <div className="flex gap-2 w-full">
-                            <p className="text-white-main  text-3xl"> {index} {name} </p>
+                            <p className="text-white-main text-3xl"># {index}   {name}</p>
                             <Verify size="30" color="#B282FF" variant="Bulk" />
                         </div>
                         <div className="flex">

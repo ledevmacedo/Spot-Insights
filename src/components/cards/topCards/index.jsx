@@ -18,7 +18,7 @@ export function TopCards({ icon, title, funcao }) {
                     ))} */}
                     {funcao.slice(0, 1).map((item, index) => (
                         <LargeListCard key={index}
-                            index={index}
+                            index={index + 1}
                             name={item[0]}
                             firstMinutes={item[1]}
                         />

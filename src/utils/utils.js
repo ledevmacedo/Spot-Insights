@@ -61,24 +61,25 @@ export function porcentagemPlaysArtista(artista) {
   return porcentagem.toFixed(2);
 }
 
-
-export function encontrarArtistaMaisOuvido() {
-  const contagemDePlaysPorArtista = {};
+export function filterTopMusics() {
+  const countPlays = {};
 
   history.forEach((musica) => {
-    const cantor = musica.master_metadata_album_artist_name;
+    const item = musica.master_metadata_track_name
     const plays = musica.ms_played || 0;
 
-    if (contagemDePlaysPorArtista[cantor]) {
-      contagemDePlaysPorArtista[cantor] += plays;
+    if (countPlays[item]) {
+      countPlays[item] += plays;
     } else {
-      contagemDePlaysPorArtista[cantor] = plays;
+      countPlays[item] = plays;
     }
+
+
   });
 
   let sortable = [];
-  for (let cantor in contagemDePlaysPorArtista) {
-    sortable.push([cantor, contagemDePlaysPorArtista[cantor]]);
+  for (let item in countPlays) {
+    sortable.push([item, countPlays[item]]);
   }
 
 
@@ -89,4 +90,61 @@ export function encontrarArtistaMaisOuvido() {
 
   return sortable.slice(1, 100);
 }
+export function filterTopArtists() {
+  const countPlays = {};
 
+  history.forEach((musica) => {
+    const item = musica.master_metadata_album_artist_name;
+    const plays = musica.ms_played || 0;
+
+    if (countPlays[item]) {
+      countPlays[item] += plays;
+    } else {
+      countPlays[item] = plays;
+    }
+
+
+  });
+
+  let sortable = [];
+  for (let item in countPlays) {
+    sortable.push([item, countPlays[item]]);
+  }
+
+
+
+  sortable.sort(function (a, b) {
+    return b[1] - a[1]; // Ordenando de forma decrescente
+  });
+
+  return sortable.slice(1, 100);
+}
+export function filterTopAlbum() {
+  const countPlays = {};
+
+  history.forEach((musica) => {
+    const item = musica.master_metadata_album_album_name;
+    const plays = musica.ms_played || 0;
+
+    if (countPlays[item]) {
+      countPlays[item] += plays;
+    } else {
+      countPlays[item] = plays;
+    }
+
+
+  });
+
+  let sortable = [];
+  for (let item in countPlays) {
+    sortable.push([item, countPlays[item]]);
+  }
+
+
+
+  sortable.sort(function (a, b) {
+    return b[1] - a[1]; // Ordenando de forma decrescente
+  });
+
+  return sortable.slice(1, 100);
+}
