@@ -165,3 +165,35 @@ export function findIndex(currentArtist) {
 
 
 
+export function filterTopMusicsArtist(artista) {
+  const countPlays = {};
+
+  history.forEach((musica) => {
+    const item = musica.master_metadata_track_name;
+    const plays = musica.ms_played || 0;
+    const artist = musica.master_metadata_album_artist_name;
+
+    // Adiciona verificação para o artista
+    if (artist === artista) {
+      const playsEmMinutos = plays / 60000;
+      const minutosArredondados = Math.round(playsEmMinutos);
+
+      if (countPlays[item]) {
+        countPlays[item] += minutosArredondados;
+      } else {
+        countPlays[item] = minutosArredondados;
+      }
+    }
+  });
+
+  let sortable = [];
+  for (let item in countPlays) {
+    sortable.push([item, countPlays[item]]);
+  }
+
+  sortable.sort(function (a, b) {
+    return b[1] - a[1]; // Ordenando de forma decrescente
+  });
+
+  return sortable.slice(0, 100);
+}
