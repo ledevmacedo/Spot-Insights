@@ -3,8 +3,6 @@ import { Home } from "./pages/home";
 import { Nav } from "./pages/home/Nav";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { Artist } from "./pages/artist";
-import { HotAlbuns } from "./pages/hotAlbuns";
-import { HotTracks } from "./pages/HotTracks";
 import { HotArtists } from "./pages/hotArtists";
 import { filterTopArtists } from "./utils/utils";
 
