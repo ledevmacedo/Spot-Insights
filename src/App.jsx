@@ -12,24 +12,22 @@ import { filterTopArtists } from "./utils/utils";
 export default function App() {
   let artists = filterTopArtists()
   return (
-    <>
-
-      <div className="h-vh min-h-dvh bg-purple-black px-4 pt-4 pb-4 flex flex-col gap-4">
+    <section className="flex bg-purple-black items-center justify-center content-center">
+      <div className="h-vh max-w-md   min-h-dvh bg-purple-black px-4 pt-4 pb-4 flex flex-col gap-4">
         <BrowserRouter>
           <Link to={"/"}>
-            <Nav userID={"@saaz"} userName="Katrina" picture={''} />
+            <Nav userID={"@saaz"} userName="Katrina" picture={""} />
           </Link>
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='*' element={<Home />} />
-            <Route path='/artistDetails/:artist' element={<Artist />} />
-            <Route path='/HotArtists' element={<HotArtists />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Home />} />
+            <Route path="/artistDetails/:artist" element={<Artist />} />
+            <Route path="/HotArtists" element={<HotArtists />} />
             {/* <Route path='/HotAlbuns' element={<HotAlbuns />} />
             <Route path='/HotTracks' element={<HotTracks />} /> */}
           </Routes>
         </BrowserRouter>
       </div>
-
-    </>
+    </section>
   );
 }
